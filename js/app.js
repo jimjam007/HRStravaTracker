@@ -280,10 +280,10 @@ function topEntry(entries) {
 function groupByWeek(activities) {
     const weeks = {};
     for (const a of activities) {
-        if (!a.start_date) continue;
-        const d = new Date(a.start_date);
-        const weekStart = new Date(d);
-        weekStart.setDate(d.getDate() - d.getDay());
+        const dateStr = a.start_date || a.first_seen;
+        if (!dateStr) continue;
+        const d = new Date(dateStr);
+        const weekStart = getMonday(d);
         const key = weekStart.toISOString().slice(0, 10);
         if (!weeks[key]) weeks[key] = [];
         weeks[key].push(a);
@@ -360,13 +360,18 @@ function renderLeaderboard(athletes, metric = 'distance', period = 'all') {
     for (const [name, acts] of Object.entries(athletes)) {
         let filtered = acts;
         if (period === 'week') {
-            const weekAgo = new Date(now);
-            weekAgo.setDate(now.getDate() - 7);
-            filtered = acts.filter(a => a.start_date && new Date(a.start_date) >= weekAgo);
+            const monday = getMonday(now);
+            filtered = acts.filter(a => {
+                const d = a.start_date || a.first_seen;
+                return d && new Date(d) >= monday;
+            });
         } else if (period === 'month') {
             const monthAgo = new Date(now);
             monthAgo.setMonth(now.getMonth() - 1);
-            filtered = acts.filter(a => a.start_date && new Date(a.start_date) >= monthAgo);
+            filtered = acts.filter(a => {
+                const d = a.start_date || a.first_seen;
+                return d && new Date(d) >= monthAgo;
+            });
         }
         if (filtered.length > 0) filteredAthletes[name] = filtered;
     }
@@ -496,10 +501,11 @@ function renderThisWeek(activities) {
     document.getElementById('weekDates').textContent =
         `(${monday.toLocaleDateString('en-GB', opts)} — ${sunday.toLocaleDateString('en-GB', opts)})`;
 
-    // Filter activities to this week
+    // Filter activities to this week (use first_seen as fallback for date)
     const weekActivities = activities.filter(a => {
-        if (!a.start_date) return false;
-        const d = new Date(a.start_date);
+        const dateStr = a.start_date || a.first_seen;
+        if (!dateStr) return false;
+        const d = new Date(dateStr);
         return d >= monday && d <= sunday;
     });
 
@@ -539,7 +545,7 @@ function renderThisWeek(activities) {
         return;
     }
 
-    const sorted = [...weekActivities].sort((a, b) => new Date(b.start_date) - new Date(a.start_date));
+    const sorted = [...weekActivities].sort((a, b) => new Date(b.start_date || b.first_seen) - new Date(a.start_date || a.first_seen));
 
     listContainer.innerHTML = sorted.map(a => {
         const name = a.athlete_name || `${a.firstname || 'Unknown'} ${(a.lastname || '').charAt(0)}`.trim();
@@ -548,7 +554,8 @@ function renderThisWeek(activities) {
         const elevation = a.total_elevation_gain ? `${Math.round(a.total_elevation_gain)} m` : '';
         const icon = getActivityIcon(a.type);
         const iconClass = getActivityClass(a.type);
-        const dayName = new Date(a.start_date).toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+        const dateStr = a.start_date || a.first_seen;
+        const dayName = dateStr ? new Date(dateStr).toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' }) : '';
 
         return `
             <div class="activity-item">

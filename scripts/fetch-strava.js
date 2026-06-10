@@ -156,38 +156,54 @@ async function main() {
         const newActivities = await fetchAllClubActivities(accessToken);
         console.log(`Fetched ${newActivities.length} activities from Strava.`);
 
-        // Filter out activities before the start date
-        const startCutoff = new Date(START_DATE);
-        const filteredNew = newActivities.filter(a => {
-            if (!a.start_date) return true; // keep activities without dates (can't filter them)
-            return new Date(a.start_date) >= startCutoff;
-        });
-        console.log(`${filteredNew.length} activities after filtering from ${START_DATE}`);
-
-        // Merge: use a composite key to deduplicate
+        // Build a lookup of existing activities to preserve first_seen timestamps
         const activityKey = (a) =>
             `${a.athlete_name}|${a.name}|${a.distance}|${a.moving_time}`;
 
+        const existingLookup = {};
+        for (const a of existingActivities) {
+            existingLookup[activityKey(a)] = a;
+        }
+
+        const now = new Date().toISOString();
+        const startCutoff = new Date(START_DATE);
         const seen = new Set();
         const merged = [];
 
-        // New activities take priority
-        for (const a of filteredNew) {
+        // Process new activities: preserve first_seen from existing, or stamp with now
+        for (const a of newActivities) {
             const key = activityKey(a);
-            if (!seen.has(key)) {
-                seen.add(key);
-                merged.push(a);
+            if (seen.has(key)) continue;
+            seen.add(key);
+
+            const existing = existingLookup[key];
+            // Use first_seen from existing data, or set to now for new activities
+            a.first_seen = existing?.first_seen || now;
+
+            // Use first_seen for date filtering since club API doesn't provide start_date
+            const effectiveDate = a.start_date ? new Date(a.start_date) : new Date(a.first_seen);
+            if (effectiveDate < startCutoff) continue;
+
+            // Populate start_date from first_seen if the API didn't provide one
+            if (!a.start_date) {
+                a.start_date = a.first_seen;
+                a.start_date_local = a.first_seen;
             }
+
+            merged.push(a);
         }
 
         // Add old activities that aren't duplicates and are after start date
         for (const a of existingActivities) {
-            if (a.start_date && new Date(a.start_date) < startCutoff) continue;
             const key = activityKey(a);
-            if (!seen.has(key)) {
-                seen.add(key);
-                merged.push(a);
-            }
+            if (seen.has(key)) continue;
+            seen.add(key);
+
+            const effectiveDate = a.start_date ? new Date(a.start_date) : new Date(a.first_seen || now);
+            if (effectiveDate < startCutoff) continue;
+
+            if (!a.first_seen) a.first_seen = now;
+            merged.push(a);
         }
 
         const output = {

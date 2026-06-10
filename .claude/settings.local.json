@@ -9,7 +9,9 @@
       "Bash(git remote:*)",
       "Bash(git push:*)",
       "Bash(gh --version)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)"
     ]
   }
 }

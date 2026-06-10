@@ -590,6 +590,34 @@ footer {
     font-size: 0.95rem;
 }
 
+/* Strava Widgets */
+.strava-widgets {
+    padding: 32px 0;
+    border-top: 1px solid var(--border);
+    margin-top: 16px;
+}
+
+.widgets-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.widget-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 16px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.widget-card iframe {
+    display: block;
+    max-width: 100%;
+}
+
 /* Loading state */
 .loading {
     text-align: center;
