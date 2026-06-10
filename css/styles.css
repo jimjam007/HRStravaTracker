@@ -1,0 +1,564 @@
+:root {
+    --strava-orange: #FC4C02;
+    --strava-orange-light: #FF6B2B;
+    --strava-dark: #1A1A2E;
+    --strava-darker: #0F0F1A;
+    --bg: #F8F9FA;
+    --card-bg: #FFFFFF;
+    --text: #1A1A2E;
+    --text-muted: #6B7280;
+    --border: #E5E7EB;
+    --gold: #FFD700;
+    --silver: #C0C0C0;
+    --bronze: #CD7F32;
+    --green: #10B981;
+    --blue: #3B82F6;
+    --purple: #8B5CF6;
+    --pink: #EC4899;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, var(--strava-dark) 0%, #16213E 50%, var(--strava-dark) 100%);
+    color: white;
+    padding: 60px 0 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(252,76,2,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--strava-orange);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 4px 20px rgba(252,76,2,0.4);
+}
+
+.hero-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.7;
+    margin-bottom: 32px;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.hero-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-stat-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--strava-orange);
+}
+
+.hero-stat-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+    margin-top: 2px;
+}
+
+/* Tabs */
+.tabs-nav {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow);
+}
+
+.tabs {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+}
+
+.tab {
+    padding: 16px 24px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.tab:hover {
+    color: var(--text);
+}
+
+.tab.active {
+    color: var(--strava-orange);
+    border-bottom-color: var(--strava-orange);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    padding: 32px 0;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Awards */
+.awards-section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+}
+
+.award-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid var(--border);
+}
+
+.award-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.award-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.award-icon.orange { background: rgba(252,76,2,0.1); }
+.award-icon.blue { background: rgba(59,130,246,0.1); }
+.award-icon.green { background: rgba(16,185,129,0.1); }
+.award-icon.purple { background: rgba(139,92,246,0.1); }
+.award-icon.pink { background: rgba(236,72,153,0.1); }
+.award-icon.gold { background: rgba(255,215,0,0.15); }
+
+.award-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.award-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.award-winner {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.award-value {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.award-card.no-data {
+    opacity: 0.5;
+}
+
+/* Leaderboard */
+.leaderboard-controls {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.select-control {
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    background: var(--card-bg);
+    color: var(--text);
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.select-control:focus {
+    border-color: var(--strava-orange);
+}
+
+.leaderboard-table {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.leaderboard-row {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    gap: 16px;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+}
+
+.leaderboard-row:last-child {
+    border-bottom: none;
+}
+
+.leaderboard-row:hover {
+    background: rgba(252,76,2,0.02);
+}
+
+.leaderboard-rank {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    background: var(--bg);
+    color: var(--text-muted);
+}
+
+.leaderboard-rank.rank-1 { background: var(--gold); color: #1a1a2e; }
+.leaderboard-rank.rank-2 { background: var(--silver); color: #1a1a2e; }
+.leaderboard-rank.rank-3 { background: var(--bronze); color: white; }
+
+.leaderboard-name {
+    flex: 1;
+    font-weight: 600;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.leaderboard-value {
+    font-weight: 700;
+    color: var(--strava-orange);
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.leaderboard-bar-wrapper {
+    width: 120px;
+    flex-shrink: 0;
+}
+
+.leaderboard-bar {
+    height: 6px;
+    border-radius: 3px;
+    background: var(--bg);
+    overflow: hidden;
+}
+
+.leaderboard-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--strava-orange), var(--strava-orange-light));
+    transition: width 0.5s ease;
+}
+
+/* Activities */
+.activity-filters {
+    margin-bottom: 20px;
+}
+
+.activities-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.activity-item {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: transform 0.15s;
+}
+
+.activity-item:hover {
+    transform: translateX(4px);
+}
+
+.activity-type-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(252,76,2,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.activity-type-icon.run { background: rgba(252,76,2,0.1); }
+.activity-type-icon.walk { background: rgba(16,185,129,0.1); }
+.activity-type-icon.hike { background: rgba(139,92,246,0.1); }
+.activity-type-icon.ride { background: rgba(59,130,246,0.1); }
+
+.activity-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.activity-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.activity-athlete {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.activity-stats {
+    display: flex;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.activity-stat {
+    text-align: right;
+}
+
+.activity-stat-value {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.activity-stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+/* Last Updated */
+.last-updated {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 32px 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    margin-top: 20px;
+}
+
+.footer-note {
+    margin-top: 4px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        padding: 40px 0 30px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-stats {
+        gap: 24px;
+    }
+
+    .hero-stat-value {
+        font-size: 1.4rem;
+    }
+
+    .awards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .activity-stats {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .activity-stat {
+        text-align: left;
+    }
+
+    .leaderboard-bar-wrapper {
+        display: none;
+    }
+
+    .tab {
+        padding: 14px 16px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .leaderboard-row {
+        padding: 12px 16px;
+    }
+}
+
+/* Loading state */
+.loading {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-muted);
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border);
+    border-top-color: var(--strava-orange);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 16px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-muted);
+}
+
+.empty-state-icon {
+    font-size: 3rem;
+    margin-bottom: 12px;
+    opacity: 0.5;
+}
