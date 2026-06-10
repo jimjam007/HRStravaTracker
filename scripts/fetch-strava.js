@@ -21,6 +21,9 @@ const REFRESH_TOKEN = process.env.STRAVA_REFRESH_TOKEN;
 const CLUB_ID = process.env.STRAVA_CLUB_ID;
 const DATA_FILE = path.join(__dirname, '..', 'data', 'activities.json');
 
+// Only include activities from this date onwards
+const START_DATE = '2026-06-01T00:00:00Z';
+
 function httpsRequest(options, postData = null) {
     return new Promise((resolve, reject) => {
         const req = https.request(options, (res) => {
@@ -153,6 +156,14 @@ async function main() {
         const newActivities = await fetchAllClubActivities(accessToken);
         console.log(`Fetched ${newActivities.length} activities from Strava.`);
 
+        // Filter out activities before the start date
+        const startCutoff = new Date(START_DATE);
+        const filteredNew = newActivities.filter(a => {
+            if (!a.start_date) return true; // keep activities without dates (can't filter them)
+            return new Date(a.start_date) >= startCutoff;
+        });
+        console.log(`${filteredNew.length} activities after filtering from ${START_DATE}`);
+
         // Merge: use a composite key to deduplicate
         const activityKey = (a) =>
             `${a.athlete_name}|${a.name}|${a.distance}|${a.moving_time}`;
@@ -161,7 +172,7 @@ async function main() {
         const merged = [];
 
         // New activities take priority
-        for (const a of newActivities) {
+        for (const a of filteredNew) {
             const key = activityKey(a);
             if (!seen.has(key)) {
                 seen.add(key);
@@ -169,8 +180,9 @@ async function main() {
             }
         }
 
-        // Add old activities that aren't duplicates
+        // Add old activities that aren't duplicates and are after start date
         for (const a of existingActivities) {
+            if (a.start_date && new Date(a.start_date) < startCutoff) continue;
             const key = activityKey(a);
             if (!seen.has(key)) {
                 seen.add(key);

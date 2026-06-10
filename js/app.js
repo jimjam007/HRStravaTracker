@@ -475,6 +475,103 @@ function renderActivities(activities, typeFilter = 'all') {
     }).join('');
 }
 
+function getMonday(d) {
+    const date = new Date(d);
+    const day = date.getDay();
+    const diff = day === 0 ? -6 : 1 - day; // Monday = 1
+    date.setHours(0, 0, 0, 0);
+    date.setDate(date.getDate() + diff);
+    return date;
+}
+
+function renderThisWeek(activities) {
+    const now = new Date();
+    const monday = getMonday(now);
+    const sunday = new Date(monday);
+    sunday.setDate(monday.getDate() + 6);
+    sunday.setHours(23, 59, 59, 999);
+
+    // Set week date range label
+    const opts = { day: 'numeric', month: 'short' };
+    document.getElementById('weekDates').textContent =
+        `(${monday.toLocaleDateString('en-GB', opts)} — ${sunday.toLocaleDateString('en-GB', opts)})`;
+
+    // Filter activities to this week
+    const weekActivities = activities.filter(a => {
+        if (!a.start_date) return false;
+        const d = new Date(a.start_date);
+        return d >= monday && d <= sunday;
+    });
+
+    // Render week summary stats
+    const statsContainer = document.getElementById('thisWeekStats');
+    const weekAthletes = new Set(weekActivities.map(a => a.athlete_name || `${a.firstname || 'Unknown'} ${(a.lastname || '').charAt(0)}`.trim()));
+    const weekDist = weekActivities.reduce((s, a) => s + (a.distance || 0), 0);
+    const weekElev = weekActivities.reduce((s, a) => s + (a.total_elevation_gain || 0), 0);
+    const weekTime = weekActivities.reduce((s, a) => s + (a.moving_time || 0), 0);
+
+    statsContainer.innerHTML = `
+        <div class="week-stat-card">
+            <div class="week-stat-value">${weekAthletes.size}</div>
+            <div class="week-stat-label">Active Members</div>
+        </div>
+        <div class="week-stat-card">
+            <div class="week-stat-value">${weekActivities.length}</div>
+            <div class="week-stat-label">Activities</div>
+        </div>
+        <div class="week-stat-card">
+            <div class="week-stat-value">${(weekDist / 1000).toFixed(1)}</div>
+            <div class="week-stat-label">km Total</div>
+        </div>
+        <div class="week-stat-card">
+            <div class="week-stat-value">${Math.round(weekElev).toLocaleString()}</div>
+            <div class="week-stat-label">m Climbed</div>
+        </div>
+        <div class="week-stat-card">
+            <div class="week-stat-value">${formatDuration(weekTime)}</div>
+            <div class="week-stat-label">Moving Time</div>
+        </div>`;
+
+    // Render this week's activities (most recent first)
+    const listContainer = document.getElementById('thisWeekActivities');
+    if (weekActivities.length === 0) {
+        listContainer.innerHTML = '<div class="this-week-empty">No activities logged this week yet. Get moving!</div>';
+        return;
+    }
+
+    const sorted = [...weekActivities].sort((a, b) => new Date(b.start_date) - new Date(a.start_date));
+
+    listContainer.innerHTML = sorted.map(a => {
+        const name = a.athlete_name || `${a.firstname || 'Unknown'} ${(a.lastname || '').charAt(0)}`.trim();
+        const distance = a.distance ? `${(a.distance / 1000).toFixed(1)} km` : '--';
+        const duration = a.moving_time ? formatDuration(a.moving_time) : '--';
+        const elevation = a.total_elevation_gain ? `${Math.round(a.total_elevation_gain)} m` : '';
+        const icon = getActivityIcon(a.type);
+        const iconClass = getActivityClass(a.type);
+        const dayName = new Date(a.start_date).toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+
+        return `
+            <div class="activity-item">
+                <div class="activity-type-icon ${iconClass}">${icon}</div>
+                <div class="activity-main">
+                    <div class="activity-title">${escapeHtml(a.name || a.type || 'Activity')}</div>
+                    <div class="activity-athlete">${escapeHtml(name)} · ${dayName}</div>
+                </div>
+                <div class="activity-stats">
+                    <div class="activity-stat">
+                        <div class="activity-stat-value">${distance}</div>
+                        <div class="activity-stat-label">Distance</div>
+                    </div>
+                    <div class="activity-stat">
+                        <div class="activity-stat-value">${duration}</div>
+                        <div class="activity-stat-label">Time</div>
+                    </div>
+                    ${elevation ? `<div class="activity-stat"><div class="activity-stat-value">${elevation}</div><div class="activity-stat-label">Elev</div></div>` : ''}
+                </div>
+            </div>`;
+    }).join('');
+}
+
 function renderHeroStats(activities, athletes) {
     document.getElementById('totalMembers').textContent = Object.keys(athletes).length;
     document.getElementById('totalActivities').textContent = activities.length;
@@ -515,6 +612,7 @@ async function init() {
         allAthletes = groupByAthlete(allActivities);
 
         renderHeroStats(allActivities, allAthletes);
+        renderThisWeek(allActivities);
         renderAwards(allAthletes);
         renderLeaderboard(allAthletes);
         renderActivities(allActivities);

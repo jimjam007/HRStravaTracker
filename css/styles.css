@@ -529,6 +529,67 @@ footer {
     }
 }
 
+/* This Week Section */
+.this-week-section {
+    padding: 32px 0 16px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 8px;
+}
+
+.this-week-header {
+    margin-bottom: 20px;
+}
+
+.week-dates {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-left: 8px;
+}
+
+.this-week-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.week-stat-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 16px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.week-stat-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--strava-orange);
+}
+
+.week-stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-top: 2px;
+}
+
+.this-week-activities {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.this-week-empty {
+    text-align: center;
+    padding: 24px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
 /* Loading state */
 .loading {
     text-align: center;
