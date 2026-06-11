@@ -156,55 +156,48 @@ async function main() {
         const newActivities = await fetchAllClubActivities(accessToken);
         console.log(`Fetched ${newActivities.length} activities from Strava.`);
 
-        // Build a lookup of existing activities to preserve first_seen timestamps
+        // Build a lookup of existing activities (these have curated dates)
         const activityKey = (a) =>
-            `${a.athlete_name}|${a.name}|${a.distance}|${a.moving_time}`;
+            `${a.athlete_name}|${a.name}|${Math.round(a.distance)}|${a.moving_time}`;
 
         const existingLookup = {};
+        const existingKeys = new Set();
         for (const a of existingActivities) {
-            existingLookup[activityKey(a)] = a;
+            const key = activityKey(a);
+            existingLookup[key] = a;
+            existingKeys.add(key);
         }
 
         const now = new Date().toISOString();
         const startCutoff = new Date(START_DATE);
         const seen = new Set();
-        const merged = [];
 
-        // Process new activities: preserve first_seen from existing, or stamp with now
+        // Start with ALL existing activities (these have curated/correct dates)
+        const merged = [...existingActivities];
+        for (const a of existingActivities) {
+            seen.add(activityKey(a));
+        }
+
+        // Only add NEW activities from the API that we haven't seen before
+        let newCount = 0;
         for (const a of newActivities) {
             const key = activityKey(a);
             if (seen.has(key)) continue;
             seen.add(key);
 
-            const existing = existingLookup[key];
-            // Use first_seen from existing data, or set to now for new activities
-            a.first_seen = existing?.first_seen || now;
+            // This is a genuinely new activity - stamp it with current time
+            a.first_seen = now;
+            a.start_date = now;
+            a.start_date_local = now;
 
-            // Use first_seen for date filtering since club API doesn't provide start_date
-            const effectiveDate = a.start_date ? new Date(a.start_date) : new Date(a.first_seen);
-            if (effectiveDate < startCutoff) continue;
-
-            // Populate start_date from first_seen if the API didn't provide one
-            if (!a.start_date) {
-                a.start_date = a.first_seen;
-                a.start_date_local = a.first_seen;
-            }
+            // Skip if somehow before start date
+            if (new Date(now) < startCutoff) continue;
 
             merged.push(a);
+            newCount++;
         }
 
-        // Add old activities that aren't duplicates and are after start date
-        for (const a of existingActivities) {
-            const key = activityKey(a);
-            if (seen.has(key)) continue;
-            seen.add(key);
-
-            const effectiveDate = a.start_date ? new Date(a.start_date) : new Date(a.first_seen || now);
-            if (effectiveDate < startCutoff) continue;
-
-            if (!a.first_seen) a.first_seen = now;
-            merged.push(a);
-        }
+        console.log(`Found ${newCount} new activities not in existing data.`);
 
         const output = {
             club_id: CLUB_ID,
