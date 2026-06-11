@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-06-11T15:29:57.394Z",
-  "total_activities": 153,
+  "last_updated": "2026-06-11T18:39:16.636Z",
+  "total_activities": 154,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -2222,6 +2222,20 @@
       "start_date_local": "2026-06-11T13:28:20.048Z",
       "workout_type": 0,
       "first_seen": "2026-06-11T13:28:20.048Z"
+    },
+    {
+      "athlete_name": "Jess F",
+      "firstname": "Jess",
+      "lastname": "F.",
+      "name": "Evening Walk",
+      "type": "Walk",
+      "distance": 2922.3,
+      "moving_time": 2106,
+      "elapsed_time": 2212,
+      "total_elevation_gain": 21.9,
+      "start_date": "2026-06-11T18:39:16.636Z",
+      "start_date_local": "2026-06-11T18:39:16.636Z",
+      "first_seen": "2026-06-11T18:39:16.636Z"
     }
   ]
 }
