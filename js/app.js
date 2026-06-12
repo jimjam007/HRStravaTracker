@@ -36,7 +36,7 @@ const PERFORMANCE_AWARDS = [
         icon: ICONS.mountain, style: '',
         compute: (ath) => {
             const t = sumBy(ath, 'distance');
-            const w = top(t);
+            const w = topEntry(t);
             return w ? { winner: w[0], value: `${km(w[1])} km total` } : null;
         }
     },
@@ -45,7 +45,7 @@ const PERFORMANCE_AWARDS = [
         icon: ICONS.trending, style: '',
         compute: (ath) => {
             const t = sumBy(ath, 'total_elevation_gain');
-            const w = top(t);
+            const w = topEntry(t);
             return w ? { winner: w[0], value: `${Math.round(w[1])} m elevation` } : null;
         }
     },
@@ -69,7 +69,7 @@ const PERFORMANCE_AWARDS = [
                 const days = new Set(acts.map(a => (a.start_date || a.first_seen || '').slice(0, 10)).filter(Boolean));
                 dc[n] = days.size;
             }
-            const w = top(Object.entries(dc));
+            const w = topEntry(Object.entries(dc));
             return w ? { winner: w[0], value: `${w[1]} active days` } : null;
         }
     },
@@ -86,7 +86,7 @@ const PERFORMANCE_AWARDS = [
                     return d === 0 || d === 6;
                 }).reduce((s, a) => s + (a.distance || 0), 0);
             }
-            const w = top(Object.entries(t));
+            const w = topEntry(Object.entries(t));
             return w && w[1] > 0 ? { winner: w[0], value: `${km(w[1])} km on weekends` } : null;
         }
     },
@@ -137,7 +137,7 @@ const MOTIVATIONAL_AWARDS = [
             const c = {};
             for (const [n, acts] of Object.entries(ath))
                 c[n] = acts.filter(a => a.distance > 0 && a.distance <= 5000).length;
-            const w = top(Object.entries(c));
+            const w = topEntry(Object.entries(c));
             return w && w[1] > 0 ? { winner: w[0], value: `${w[1]} activities under 5 km` } : null;
         }
     },
@@ -177,7 +177,7 @@ const MOTIVATIONAL_AWARDS = [
 function sumBy(ath, field) {
     return Object.entries(ath).map(([n, acts]) => [n, acts.reduce((s, a) => s + (a[field] || 0), 0)]);
 }
-function top(entries) {
+function topEntry(entries) {
     if (!entries || !entries.length) return null;
     return entries.reduce((b, c) => (!b || c[1] > b[1]) ? c : b, null);
 }

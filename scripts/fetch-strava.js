@@ -88,42 +88,29 @@ async function fetchClubActivities(accessToken, page = 1, perPage = 200) {
     return resp.data;
 }
 
-async function fetchAllClubActivities(accessToken) {
-    let allActivities = [];
-    let page = 1;
-    const perPage = 200;
+async function fetchRecentClubActivities(accessToken) {
+    // Only fetch page 1 (most recent activities) to find genuinely new ones
+    // This avoids re-adding hundreds of old activities from the full club history
+    const activities = await fetchClubActivities(accessToken, 1, 200);
+    if (!activities || activities.length === 0) return [];
 
-    while (true) {
-        const activities = await fetchClubActivities(accessToken, page, perPage);
-        if (!activities || activities.length === 0) break;
+    const normalized = activities.map(a => ({
+        athlete_name: `${a.athlete?.firstname || 'Unknown'} ${(a.athlete?.lastname || '').charAt(0)}`.trim(),
+        firstname: a.athlete?.firstname,
+        lastname: a.athlete?.lastname,
+        name: a.name,
+        type: a.type || a.sport_type,
+        distance: a.distance || 0,
+        moving_time: a.moving_time || 0,
+        elapsed_time: a.elapsed_time || 0,
+        total_elevation_gain: a.total_elevation_gain || 0,
+        start_date: a.start_date || null,
+        start_date_local: a.start_date_local || null,
+        workout_type: a.workout_type
+    }));
 
-        // Normalize the data
-        const normalized = activities.map(a => ({
-            athlete_name: `${a.athlete?.firstname || 'Unknown'} ${(a.athlete?.lastname || '').charAt(0)}`.trim(),
-            firstname: a.athlete?.firstname,
-            lastname: a.athlete?.lastname,
-            name: a.name,
-            type: a.type || a.sport_type,
-            distance: a.distance || 0,
-            moving_time: a.moving_time || 0,
-            elapsed_time: a.elapsed_time || 0,
-            total_elevation_gain: a.total_elevation_gain || 0,
-            start_date: a.start_date || null,
-            start_date_local: a.start_date_local || null,
-            workout_type: a.workout_type
-        }));
-
-        allActivities = allActivities.concat(normalized);
-        console.log(`  Page ${page}: ${activities.length} activities fetched`);
-
-        if (activities.length < perPage) break;
-        page++;
-
-        // Respect rate limits
-        await new Promise(resolve => setTimeout(resolve, 1000));
-    }
-
-    return allActivities;
+    console.log(`  Fetched ${normalized.length} recent activities`);
+    return normalized;
 }
 
 async function main() {
@@ -153,7 +140,7 @@ async function main() {
         }
 
         const accessToken = await refreshAccessToken();
-        const newActivities = await fetchAllClubActivities(accessToken);
+        const newActivities = await fetchRecentClubActivities(accessToken);
         console.log(`Fetched ${newActivities.length} activities from Strava.`);
 
         // Build a lookup of existing activities (these have curated dates)
