@@ -246,13 +246,7 @@ h1, h2, h3 {
     color: var(--warm);
 }
 
-/* ========== THIS WEEK ========== */
-.this-week {
-    background: var(--bg-primary);
-    border-bottom: 1px solid var(--border);
-    padding: 32px 0;
-}
-
+/* ========== WEEK STATS ========== */
 .week-dates {
     font-family: 'Outfit', sans-serif;
     font-size: var(--text-sm);
@@ -296,10 +290,45 @@ h1, h2, h3 {
     font-weight: 500;
 }
 
-.week-activities {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+/* ========== SCROLLABLE ACTIVITY LIST ========== */
+.activity-scroll-container {
+    max-height: 520px;
+    overflow-y: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--bg-primary);
+}
+
+.activity-scroll-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.activity-scroll-container::-webkit-scrollbar-track {
+    background: var(--bg-muted);
+    border-radius: 3px;
+}
+
+.activity-scroll-container::-webkit-scrollbar-thumb {
+    background: var(--sage-300);
+    border-radius: 3px;
+}
+
+.activity-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: var(--sage-400);
+}
+
+.activity-scroll-container .activities-list {
+    gap: 0;
+}
+
+.activity-scroll-container .act-item {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--border);
+}
+
+.activity-scroll-container .act-item:last-child {
+    border-bottom: none;
 }
 
 .week-empty {

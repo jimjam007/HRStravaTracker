@@ -17,9 +17,9 @@ const ICONS = {
     star:      '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>',
     clock:     '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
     zap:       '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
-    run:       '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',
-    walk:      '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>',
-    hike:      '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>',
+    run:       '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="4" r="2"/><path d="M15.59 13.51l2.78 4.57a1 1 0 0 1-.36 1.37 1 1 0 0 1-1.37-.36L14 14.5V20a1 1 0 0 1-2 0v-5.5l-2.64-4.34L6.18 13.6a1 1 0 0 1-1.42 0 1 1 0 0 1 0-1.42l4.24-4.24a1 1 0 0 1 .71-.29h2.58a1 1 0 0 1 .85.47z"/></svg>',
+    walk:      '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"/><path d="M13.5 8.5L15 12l-3 3 2 5"/><path d="M10 8.5L8.5 12l1.5 3-2.5 5"/><path d="M9.5 8.5h4"/></svg>',
+    hike:      '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"/><path d="M13.5 8.5L15 12l-3 3 2 5"/><path d="M10 8.5L8.5 12l1.5 3-2.5 5"/><path d="M9.5 8.5h4"/><line x1="5" y1="5" x2="5" y2="21"/><path d="M5 5l4 2"/></svg>',
 };
 
 // Activity type icon/class mapping
@@ -367,11 +367,43 @@ function renderLeaderboard(athletes, metric = 'distance', period = 'all') {
     }).join('');
 }
 
-function renderActivities(activities, filter = 'all') {
+function buildWeekOptions(activities) {
+    const sel = document.getElementById('weekFilter');
+    const weeks = {};
+    for (const a of activities) {
+        const ds = a.start_date || a.first_seen;
+        if (!ds) continue;
+        const mon = getMonday(new Date(ds));
+        const key = mon.toISOString().slice(0, 10);
+        if (!weeks[key]) weeks[key] = mon;
+    }
+    const sorted = Object.keys(weeks).sort().reverse();
+    sel.innerHTML = '<option value="all">All Weeks</option>' +
+        sorted.map(key => {
+            const mon = weeks[key];
+            const sun = new Date(mon); sun.setDate(mon.getDate() + 6);
+            const fmt = { day: 'numeric', month: 'short' };
+            const label = `${mon.toLocaleDateString('en-GB', fmt)} \u2013 ${sun.toLocaleDateString('en-GB', fmt)}`;
+            return `<option value="${key}">${label}</option>`;
+        }).join('');
+}
+
+function renderActivities(activities, typeFilter = 'all', weekFilter = 'all') {
     const el = document.getElementById('activitiesList');
-    let fa = filter === 'all' ? activities : activities.filter(a => a.type === filter);
-    fa = [...fa].sort((a, b) => new Date(b.start_date || b.first_seen || 0) - new Date(a.start_date || a.first_seen || 0)).slice(0, 60);
-    if (!fa.length) { el.innerHTML = '<div class="empty-state"><p>No activities found</p></div>'; return; }
+    let fa = activities;
+    if (typeFilter !== 'all') fa = fa.filter(a => a.type === typeFilter);
+    if (weekFilter !== 'all') {
+        const mon = new Date(weekFilter + 'T00:00:00Z');
+        const sun = new Date(mon); sun.setDate(mon.getDate() + 7);
+        fa = fa.filter(a => {
+            const ds = a.start_date || a.first_seen;
+            if (!ds) return false;
+            const d = new Date(ds);
+            return d >= mon && d < sun;
+        });
+    }
+    fa = [...fa].sort((a, b) => new Date(b.start_date || b.first_seen || 0) - new Date(a.start_date || a.first_seen || 0));
+    if (!fa.length) { el.innerHTML = '<div class="empty-state"><p>No activities found for this selection</p></div>'; return; }
     el.innerHTML = fa.map(a => activityRow(a)).join('');
 }
 
@@ -410,6 +442,7 @@ async function init() {
         renderThisWeek(allActivities);
         renderAwards(allAthletes);
         renderLeaderboard(allAthletes);
+        buildWeekOptions(allActivities);
         renderActivities(allActivities);
 
         if (data.last_updated) {
@@ -431,7 +464,10 @@ document.getElementById('leaderboardPeriod').addEventListener('change', () => {
     renderLeaderboard(allAthletes, document.getElementById('leaderboardMetric').value, document.getElementById('leaderboardPeriod').value);
 });
 document.getElementById('activityTypeFilter').addEventListener('change', () => {
-    renderActivities(allActivities, document.getElementById('activityTypeFilter').value);
+    renderActivities(allActivities, document.getElementById('activityTypeFilter').value, document.getElementById('weekFilter').value);
+});
+document.getElementById('weekFilter').addEventListener('change', () => {
+    renderActivities(allActivities, document.getElementById('activityTypeFilter').value, document.getElementById('weekFilter').value);
 });
 
 init();
