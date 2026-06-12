@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-06-12T11:25:44.151Z",
-  "total_activities": 40,
+  "last_updated": "2026-06-12T13:43:40.008Z",
+  "total_activities": 41,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -585,6 +585,20 @@
       "start_date": "2026-06-12T07:00:00Z",
       "start_date_local": "2026-06-12T08:00:00",
       "first_seen": "2026-06-12T08:00:00Z"
+    },
+    {
+      "athlete_name": "Will D",
+      "firstname": "Will",
+      "lastname": "D.",
+      "name": "Afternoon Walk",
+      "type": "Walk",
+      "distance": 2883.4,
+      "moving_time": 1807,
+      "elapsed_time": 1868,
+      "total_elevation_gain": 68,
+      "start_date": "2026-06-12T13:43:40.007Z",
+      "start_date_local": "2026-06-12T13:43:40.007Z",
+      "first_seen": "2026-06-12T13:43:40.007Z"
     }
   ],
   "known_keys": [
@@ -606,9 +620,9 @@
     "Rebecca H|Afternoon Walk|2709|2064",
     "Rebecca H|6.5km Long Run|7021|2858",
     "Cintia J|Morning Run|4330|1695",
-    "Rebecca H|5km Race TOO EFFING HOT \ud83d\udd25\ud83d\ude2d|5001|1725",
+    "Rebecca H|5km Race TOO EFFING HOT 🔥😭|5001|1725",
     "Cintia J|Morning Run|4393|1656",
-    "Cintia J|Ultra Balaton 2026\ud83d\ude4c\ud83c\udffc|19282|7465",
+    "Cintia J|Ultra Balaton 2026🙌🏼|19282|7465",
     "James A|Ticking over|6829|1851",
     "Will D|Afternoon Walk|2729|1660",
     "Will D|Afternoon Walk|3510|2298",
@@ -692,7 +706,7 @@
     "Rebecca H|600s into 200s|6848|2627",
     "Rebecca H|Afternoon Walk|4490|3418",
     "Jess F|Lunch Walk|940|814",
-    "Cintia J|Energizing morning run\ud83d\ude4c\ud83c\udffc\ud83c\udf89\ud83d\udcab|4201|1639",
+    "Cintia J|Energizing morning run🙌🏼🎉💫|4201|1639",
     "James A|Easy 12 (ish)|11721|3627",
     "Rebecca H|Afternoon Walk|4447|3710",
     "Rebecca H|Evening Walk|2652|1874",
@@ -702,7 +716,7 @@
     "Cintia J|Morning Run|4323|1705",
     "Will D|Lunch Walk|2507|1515",
     "Ali K|Lunchtime Walk|2355|2040",
-    "Rebecca H|5km Easy Run - Changed my mind on \u201ceasy\u201d|5002|1739",
+    "Rebecca H|5km Easy Run - Changed my mind on “easy”|5002|1739",
     "Rebecca H|7km Block Long Run|7267|2961",
     "Rebecca H|Afternoon Walk|3731|3114",
     "Ana E|Morning Walk|2393|1740",
@@ -755,6 +769,8 @@
     "Rebecca H|Morning Walk|2736|2477",
     "Will D|Afternoon Walk|7585|4540",
     "Rebecca H|Hella Windy 200m Repeats|8004|3151",
-    "James A|As Prescribed|25549|8188"
+    "James A|As Prescribed|25549|8188",
+    "Cintia J|Morning Run|4270|1603",
+    "Will D|Afternoon Walk|2883|1807"
   ]
 }
