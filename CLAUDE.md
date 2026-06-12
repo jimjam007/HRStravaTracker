@@ -61,6 +61,19 @@ If a "new" activity (not in known_keys) matches an existing activity by:
 
 ...it's skipped as a likely duplicate. This specifically handles athletes like Cintia who run the same route daily with near-identical stats.
 
+### Layer 3: Per-Sync Cap
+Maximum 5 new activities per sync cycle. With ~7 members syncing every 15 minutes, more than 5 genuinely new activities in one run is almost certainly old data resurfacing from the API. Keys are still remembered even when capped, so they won't reappear on the next sync.
+
+## Date Handling: UTC vs Local Time
+
+**Critical**: All date filtering and week grouping in the frontend must use **local time**, not UTC. The `getMonday()` helper calculates weeks in local time, so any code that converts dates to strings for comparison must also use local time.
+
+- `localDateStr(d)` — formats a Date as `YYYY-MM-DD` in local time (NOT `toISOString()` which converts to UTC)
+- `start_date_local` — always preferred over `start_date` for filtering/display (falls back to `start_date` then `first_seen`)
+- Week filter boundaries use `new Date(weekFilter + 'T00:00:00')` (no `Z` suffix = local time)
+
+**Why this matters**: In BST (UTC+1), `toISOString().slice(0,10)` shifts dates back by one day (local midnight = 23:00 UTC the previous day). This caused activities on e.g. Saturday June 7 to appear in the following week's filter.
+
 ## Data File Format (data/activities.json)
 
 ```json
