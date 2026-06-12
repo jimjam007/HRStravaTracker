@@ -43,9 +43,9 @@
       "moving_time": 1750,
       "elapsed_time": 1856,
       "total_elevation_gain": 31,
-      "start_date": "2026-06-02T05:00:00Z",
-      "start_date_local": "2026-06-02T07:00:00",
-      "first_seen": "2026-06-02T07:00:00Z",
+      "start_date": "2026-06-09T05:00:00Z",
+      "start_date_local": "2026-06-09T07:00:00",
+      "first_seen": "2026-06-09T07:00:00Z",
       "workout_type": null
     },
     {
@@ -58,9 +58,9 @@
       "moving_time": 2040,
       "elapsed_time": 2609,
       "total_elevation_gain": 19.9,
-      "start_date": "2026-06-02T11:00:00Z",
-      "start_date_local": "2026-06-02T12:00:00",
-      "first_seen": "2026-06-02T12:00:00Z"
+      "start_date": "2026-06-09T11:07:00Z",
+      "start_date_local": "2026-06-09T12:07:00",
+      "first_seen": "2026-06-09T12:07:00Z"
     },
     {
       "athlete_name": "Rebecca H",
@@ -101,9 +101,9 @@
       "moving_time": 1773,
       "elapsed_time": 1950,
       "total_elevation_gain": 10.8,
-      "start_date": "2026-06-03T11:47:00Z",
-      "start_date_local": "2026-06-03T12:47:00",
-      "first_seen": "2026-06-03T12:47:00Z"
+      "start_date": "2026-06-08T11:47:00Z",
+      "start_date_local": "2026-06-08T12:47:00",
+      "first_seen": "2026-06-08T12:47:00Z"
     },
     {
       "athlete_name": "Rebecca H",
@@ -159,9 +159,9 @@
       "moving_time": 1207,
       "elapsed_time": 1207,
       "total_elevation_gain": 30.7,
-      "start_date": "2026-06-04T13:00:00Z",
-      "start_date_local": "2026-06-04T14:00:00",
-      "first_seen": "2026-06-04T14:00:00Z"
+      "start_date": "2026-06-08T14:04:00Z",
+      "start_date_local": "2026-06-08T15:04:00",
+      "first_seen": "2026-06-08T15:04:00Z"
     },
     {
       "athlete_name": "Rebecca H",
@@ -291,9 +291,9 @@
       "moving_time": 1656,
       "elapsed_time": 1868,
       "total_elevation_gain": 32.7,
-      "start_date": "2026-06-07T05:00:00Z",
-      "start_date_local": "2026-06-07T07:00:00",
-      "first_seen": "2026-06-07T07:00:00Z",
+      "start_date": "2026-06-08T05:00:00Z",
+      "start_date_local": "2026-06-08T07:00:00",
+      "first_seen": "2026-06-08T07:00:00Z",
       "workout_type": null
     },
     {
@@ -321,9 +321,9 @@
       "moving_time": 1705,
       "elapsed_time": 1786,
       "total_elevation_gain": 32,
-      "start_date": "2026-06-08T05:00:00Z",
-      "start_date_local": "2026-06-08T07:00:00",
-      "first_seen": "2026-06-08T07:00:00Z",
+      "start_date": "2026-06-10T05:00:00Z",
+      "start_date_local": "2026-06-10T07:00:00",
+      "first_seen": "2026-06-10T07:00:00Z",
       "workout_type": null
     },
     {
@@ -554,7 +554,7 @@
     "Cintia J|Morning Run|4210|1723",
     "Rebecca H|Evening Walk|3927|3565",
     "Rebecca H|Evening Walk|2924|2760",
-    "Rebecca H|5km Easy Run - Changed my mind on “easy”|5002|1739",
+    "Rebecca H|5km Easy Run - Changed my mind on \u201ceasy\u201d|5002|1739",
     "James A|As Prescribed|25549|8188",
     "Jess F|Evening Walk|2922|2106",
     "Will D|Lunch Walk|2507|1515",
@@ -569,7 +569,7 @@
     "Cintia J|Morning Run|4265|1636",
     "Cintia J|Morning Run|4272|1694",
     "Will D|Afternoon Walk|3073|1838",
-    "Cintia J|Energizing morning run🙌🏼🎉💫|4201|1639",
+    "Cintia J|Energizing morning run\ud83d\ude4c\ud83c\udffc\ud83c\udf89\ud83d\udcab|4201|1639",
     "Rebecca H|Afternoon Walk|5008|4186",
     "Rebecca H|Lunch Walk|2669|2094",
     "James A|Afternoon Run|11598|2970",
@@ -601,7 +601,7 @@
     "James A|SLR|24586|7279",
     "Cintia J|Morning Run|4301|1658",
     "Rebecca H|Lil warm up|549|185",
-    "Rebecca H|5km Race TOO EFFING HOT 🔥😭|5001|1725",
+    "Rebecca H|5km Race TOO EFFING HOT \ud83d\udd25\ud83d\ude2d|5001|1725",
     "Rebecca H|Night Walk|3621|2957",
     "Cintia J|Morning Run|4495|1703",
     "Will D|Afternoon Walk|3510|2298",
@@ -612,7 +612,7 @@
     "Rebecca H|Evening Walk|3710|2972",
     "Rebecca H|6.5km Long Run|7021|2858",
     "Will D|Afternoon Walk|2149|1488",
-    "Cintia J|Ultra Balaton 2026🙌🏼|19282|7465",
+    "Cintia J|Ultra Balaton 2026\ud83d\ude4c\ud83c\udffc|19282|7465",
     "James A|Morning Run|22730|6703",
     "Will D|Afternoon Walk|2729|1660",
     "James A|14@5:10pk, 6@3:53pk, 6@5:15pk|26004|7679",
