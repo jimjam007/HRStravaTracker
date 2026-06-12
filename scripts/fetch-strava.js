@@ -127,13 +127,15 @@ async function main() {
     }
 
     try {
-        // Load existing data to merge (keep historical data)
+        // Load existing data and known keys (keys of ALL activities ever seen from API)
         let existingActivities = [];
+        let knownKeys = [];
         if (fs.existsSync(DATA_FILE)) {
             try {
                 const existing = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
                 existingActivities = existing.activities || [];
-                console.log(`Loaded ${existingActivities.length} existing activities.`);
+                knownKeys = existing.known_keys || [];
+                console.log(`Loaded ${existingActivities.length} activities and ${knownKeys.length} known keys.`);
             } catch {
                 console.log('Could not parse existing data file, starting fresh.');
             }
@@ -143,54 +145,48 @@ async function main() {
         const newActivities = await fetchRecentClubActivities(accessToken);
         console.log(`Fetched ${newActivities.length} activities from Strava.`);
 
-        // Build a lookup of existing activities (these have curated dates)
         const activityKey = (a) =>
             `${a.athlete_name}|${a.name}|${Math.round(a.distance)}|${a.moving_time}`;
 
-        const existingLookup = {};
-        const existingKeys = new Set();
+        // Build set of ALL known keys (existing activities + previously seen API activities)
+        const knownSet = new Set(knownKeys);
         for (const a of existingActivities) {
-            const key = activityKey(a);
-            existingLookup[key] = a;
-            existingKeys.add(key);
+            knownSet.add(activityKey(a));
         }
 
         const now = new Date().toISOString();
-        const startCutoff = new Date(START_DATE);
-        const seen = new Set();
 
         // Start with ALL existing activities (these have curated/correct dates)
         const merged = [...existingActivities];
-        for (const a of existingActivities) {
-            seen.add(activityKey(a));
-        }
 
-        // Only add NEW activities from the API that we haven't seen before
+        // Only add activities we have NEVER seen before in any sync
         let newCount = 0;
         for (const a of newActivities) {
             const key = activityKey(a);
-            if (seen.has(key)) continue;
-            seen.add(key);
+
+            // Remember this key for future syncs (even if we don't add the activity)
+            knownSet.add(key);
+
+            // Skip if we've seen this activity before
+            if (knownKeys.includes(key) || existingActivities.some(e => activityKey(e) === key)) continue;
 
             // This is a genuinely new activity - stamp it with current time
             a.first_seen = now;
             a.start_date = now;
             a.start_date_local = now;
 
-            // Skip if somehow before start date
-            if (new Date(now) < startCutoff) continue;
-
             merged.push(a);
             newCount++;
         }
 
-        console.log(`Found ${newCount} new activities not in existing data.`);
+        console.log(`Found ${newCount} genuinely new activities.`);
 
         const output = {
             club_id: CLUB_ID,
             last_updated: new Date().toISOString(),
             total_activities: merged.length,
-            activities: merged
+            activities: merged,
+            known_keys: [...knownSet]
         };
 
         // Ensure data directory exists
