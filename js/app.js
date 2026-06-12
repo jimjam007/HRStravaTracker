@@ -24,9 +24,9 @@ const ICONS = {
 
 // Activity type icon/class mapping
 function actTypeIcon(type) {
-    if (type === 'Walk') return { icon: ICONS.walk, cls: 'walk' };
-    if (type === 'Hike') return { icon: ICONS.hike, cls: 'hike' };
-    return { icon: ICONS.run, cls: '' };
+    if (type === 'Walk') return { icon: '<img src="walk.png" alt="Walk" class="act-type-img">', cls: 'walk' };
+    if (type === 'Hike') return { icon: '<img src="walk.png" alt="Hike" class="act-type-img">', cls: 'hike' };
+    return { icon: '<img src="run.png" alt="Run" class="act-type-img">', cls: '' };
 }
 
 // Award definitions

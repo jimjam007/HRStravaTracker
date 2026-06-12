@@ -632,12 +632,20 @@ h1, h2, h3 {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    overflow: hidden;
     color: var(--sage-600);
     background: var(--accent-subtle);
 }
 
-.act-type.walk { color: var(--success); background: rgba(76,175,125,0.08); }
-.act-type.hike { color: var(--warm); background: var(--warm-subtle); }
+.act-type.walk { background: transparent; }
+.act-type.hike { background: transparent; }
+
+.act-type-img {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    object-fit: cover;
+}
 
 .act-main { flex: 1; min-width: 0; }
 
