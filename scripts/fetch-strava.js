@@ -170,7 +170,7 @@ async function main() {
                 e.athlete_name === a.athlete_name &&
                 e.name === a.name &&
                 Math.abs(e.distance - a.distance) < Math.max(a.distance * 0.1, 200) &&
-                Math.abs(e.moving_time - a.moving_time) < 120
+                Math.abs(e.moving_time - a.moving_time) < 10
             );
         }
 
@@ -187,7 +187,7 @@ async function main() {
             if (knownSet.has(key) && (knownKeys.includes(key) || existingActivities.some(e => activityKey(e) === key))) continue;
 
             // Skip if it fuzzy-matches an existing activity (same person, same name,
-            // similar distance within 10% or 200m, and time within 2 minutes)
+            // similar distance within 10% or 200m, and time within 10 seconds)
             if (fuzzyMatchExists(a)) {
                 console.log(`  Skipped fuzzy duplicate: ${a.athlete_name} "${a.name}" ${Math.round(a.distance)}m`);
                 skippedFuzzy++;
