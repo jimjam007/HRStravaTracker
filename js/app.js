@@ -206,12 +206,19 @@ function getMonday(d) {
     dt.setDate(dt.getDate() - (day === 0 ? 6 : day - 1));
     return dt;
 }
+// Format a Date as YYYY-MM-DD in local time (not UTC)
+function localDateStr(d) {
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${y}-${m}-${day}`;
+}
 function groupByWeek(acts) {
     const w = {};
     for (const a of acts) {
         const ds = a.start_date_local || a.start_date || a.first_seen;
         if (!ds) continue;
-        const key = getMonday(new Date(ds)).toISOString().slice(0, 10);
+        const key = localDateStr(getMonday(new Date(ds)));
         (w[key] = w[key] || []).push(a);
     }
     return w;
@@ -389,7 +396,7 @@ function buildWeekOptions(activities) {
         const ds = a.start_date_local || a.start_date || a.first_seen;
         if (!ds) continue;
         const mon = getMonday(new Date(ds));
-        const key = mon.toISOString().slice(0, 10);
+        const key = localDateStr(mon);
         if (!weeks[key]) weeks[key] = mon;
     }
     const sorted = Object.keys(weeks).sort().reverse();
