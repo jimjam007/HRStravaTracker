@@ -119,8 +119,8 @@ Maximum 5 new activities per sync cycle. With ~7 members syncing every 15 minute
 - `initTabs()` — tab switching, looks for `id="tab-" + tab.dataset.tab`
 
 ### Awards system
-- `PERFORMANCE_AWARDS` — 6 awards including "Hero Hiker" (most hiking elevation)
-- `MOTIVATIONAL_AWARDS` — 5 awards
+- `PERFORMANCE_AWARDS` — 6 awards: Trailblazer (distance), Peak Performer (elevation), Mileage Master (longest single activity), Time Traveller (total moving time), Weekend Warrior (weekend distance), Hero Hiker (walk/hike distance)
+- `MOTIVATIONAL_AWARDS` — 6 awards: Consistency Champion (active days), Most Improved (week-on-week increase), plus others
 - Each award has a `compute(athletes)` function that auto-calculates the winner
 
 ### Important: `top()` function conflict
