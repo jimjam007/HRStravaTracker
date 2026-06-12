@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
   "last_updated": "2026-06-12T15:09:25.367Z",
-  "total_activities": 38,
+  "total_activities": 37,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -541,21 +541,6 @@
       "start_date": "2026-06-12T07:00:00Z",
       "start_date_local": "2026-06-12T08:00:00",
       "first_seen": "2026-06-12T08:00:00Z"
-    },
-    {
-      "athlete_name": "James A",
-      "firstname": "James",
-      "lastname": "A.",
-      "name": "Afternoon Run",
-      "type": "Run",
-      "distance": 11649.9,
-      "moving_time": 3668,
-      "elapsed_time": 3728,
-      "total_elevation_gain": 39,
-      "start_date": "2026-06-12T15:09:25.366Z",
-      "start_date_local": "2026-06-12T15:09:25.366Z",
-      "workout_type": null,
-      "first_seen": "2026-06-12T15:09:25.366Z"
     }
   ],
   "known_keys": [

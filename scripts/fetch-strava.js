@@ -174,6 +174,11 @@ async function main() {
             );
         }
 
+        // Cap: at most 5 new activities per sync. The club has ~7 members and
+        // syncs every 15 mins, so more than 5 genuinely new activities in one
+        // cycle is almost certainly old data resurfacing from the API.
+        const MAX_NEW_PER_SYNC = 5;
+
         // Only add activities we have NEVER seen before in any sync
         let newCount = 0;
         let skippedFuzzy = 0;
@@ -192,6 +197,13 @@ async function main() {
                 console.log(`  Skipped fuzzy duplicate: ${a.athlete_name} "${a.name}" ${Math.round(a.distance)}m`);
                 skippedFuzzy++;
                 continue;
+            }
+
+            // Stop adding if we've hit the cap — remaining keys are still
+            // remembered in knownSet so they won't reappear next sync
+            if (newCount >= MAX_NEW_PER_SYNC) {
+                console.log(`  Hit cap of ${MAX_NEW_PER_SYNC} new activities — skipping remaining to prevent old data flooding in.`);
+                break;
             }
 
             // This is a genuinely new activity - stamp it with current time
