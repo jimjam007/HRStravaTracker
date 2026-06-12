@@ -90,6 +90,19 @@ const PERFORMANCE_AWARDS = [
             return w && w[1] > 0 ? { winner: w[0], value: `${km(w[1])} km on weekends` } : null;
         }
     },
+    {
+        id: 'hero_hiker', name: 'Hero Hiker', desc: 'Furthest total walk distance',
+        icon: ICONS.shoe, style: '',
+        compute: (ath) => {
+            const t = {};
+            for (const [n, acts] of Object.entries(ath)) {
+                t[n] = acts.filter(a => a.type === 'Walk' || a.type === 'Hike')
+                    .reduce((s, a) => s + (a.distance || 0), 0);
+            }
+            const w = topEntry(Object.entries(t));
+            return w && w[1] > 0 ? { winner: w[0], value: `${km(w[1])} km walked` } : null;
+        }
+    },
 ];
 
 const MOTIVATIONAL_AWARDS = [
