@@ -209,7 +209,7 @@ function getMonday(d) {
 function groupByWeek(acts) {
     const w = {};
     for (const a of acts) {
-        const ds = a.start_date || a.first_seen;
+        const ds = a.start_date_local || a.start_date || a.first_seen;
         if (!ds) continue;
         const key = getMonday(new Date(ds)).toISOString().slice(0, 10);
         (w[key] = w[key] || []).push(a);
@@ -248,7 +248,7 @@ function renderThisWeek(activities) {
     document.getElementById('weekDates').textContent = `${mon.toLocaleDateString('en-GB', opts)} \u2013 ${sun.toLocaleDateString('en-GB', opts)}`;
 
     const week = activities.filter(a => {
-        const ds = a.start_date || a.first_seen;
+        const ds = a.start_date_local || a.start_date || a.first_seen;
         if (!ds) return false;
         const d = new Date(ds);
         return d >= mon && d <= sun;
@@ -270,13 +270,13 @@ function renderThisWeek(activities) {
 
     const listEl = document.getElementById('thisWeekActivities');
     if (!week.length) { listEl.innerHTML = '<div class="week-empty">No activities logged this week yet.</div>'; return; }
-    const sorted = [...week].sort((a, b) => new Date(b.start_date || b.first_seen) - new Date(a.start_date || a.first_seen));
+    const sorted = [...week].sort((a, b) => new Date(b.start_date_local || b.start_date || b.first_seen) - new Date(a.start_date_local || a.start_date || a.first_seen));
     listEl.innerHTML = sorted.map(a => activityRow(a)).join('');
 }
 
 function activityRow(a) {
     const name = a.athlete_name || `${a.firstname || ''} ${(a.lastname || '').charAt(0)}`.trim();
-    const ds = a.start_date || a.first_seen;
+    const ds = a.start_date_local || a.start_date || a.first_seen;
     const dateStr = ds ? new Date(ds).toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' }) : '';
     const { icon, cls } = actTypeIcon(a.type);
     const distance = a.distance ? `${km(a.distance)} km` : '--';
@@ -336,10 +336,10 @@ function renderLeaderboard(athletes, metric = 'distance', period = 'all') {
         let fa = acts;
         if (period === 'week') {
             const mon = getMonday(now);
-            fa = acts.filter(a => { const d = a.start_date || a.first_seen; return d && new Date(d) >= mon; });
+            fa = acts.filter(a => { const d = a.start_date_local || a.start_date || a.first_seen; return d && new Date(d) >= mon; });
         } else if (period === 'month') {
             const mAgo = new Date(now); mAgo.setMonth(now.getMonth() - 1);
-            fa = acts.filter(a => { const d = a.start_date || a.first_seen; return d && new Date(d) >= mAgo; });
+            fa = acts.filter(a => { const d = a.start_date_local || a.start_date || a.first_seen; return d && new Date(d) >= mAgo; });
         }
         if (fa.length) filt[n] = fa;
     }
@@ -386,7 +386,7 @@ function buildWeekOptions(activities) {
     const sel = document.getElementById('weekFilter');
     const weeks = {};
     for (const a of activities) {
-        const ds = a.start_date || a.first_seen;
+        const ds = a.start_date_local || a.start_date || a.first_seen;
         if (!ds) continue;
         const mon = getMonday(new Date(ds));
         const key = mon.toISOString().slice(0, 10);
@@ -408,16 +408,16 @@ function renderActivities(activities, typeFilter = 'all', weekFilter = 'all') {
     let fa = activities;
     if (typeFilter !== 'all') fa = fa.filter(a => a.type === typeFilter);
     if (weekFilter !== 'all') {
-        const mon = new Date(weekFilter + 'T00:00:00Z');
+        const mon = new Date(weekFilter + 'T00:00:00');
         const sun = new Date(mon); sun.setDate(mon.getDate() + 7);
         fa = fa.filter(a => {
-            const ds = a.start_date || a.first_seen;
+            const ds = a.start_date_local || a.start_date || a.first_seen;
             if (!ds) return false;
             const d = new Date(ds);
             return d >= mon && d < sun;
         });
     }
-    fa = [...fa].sort((a, b) => new Date(b.start_date || b.first_seen || 0) - new Date(a.start_date || a.first_seen || 0));
+    fa = [...fa].sort((a, b) => new Date(b.start_date_local || b.start_date || b.first_seen || 0) - new Date(a.start_date_local || a.start_date || a.first_seen || 0));
     if (!fa.length) { el.innerHTML = '<div class="empty-state"><p>No activities found for this selection</p></div>'; return; }
     el.innerHTML = fa.map(a => activityRow(a)).join('');
 }
