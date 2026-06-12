@@ -94,6 +94,10 @@ h1, h2, h3 {
     padding: 0 24px;
 }
 
+.container.container-wide {
+    max-width: 1320px;
+}
+
 /* ---- Animations ---- */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(16px); }
@@ -688,8 +692,8 @@ h1, h2, h3 {
 /* ========== PANEL + SIDEBAR LAYOUT ========== */
 .panel-with-sidebar {
     display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 20px;
+    grid-template-columns: 1fr 300px;
+    gap: 24px;
     align-items: start;
 }
 
@@ -728,7 +732,7 @@ h1, h2, h3 {
     width: 100%;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .panel-with-sidebar {
         grid-template-columns: 1fr;
     }
