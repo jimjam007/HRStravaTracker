@@ -296,7 +296,7 @@ h1, h2, h3 {
 
 /* ========== SCROLLABLE ACTIVITY LIST ========== */
 .activity-scroll-container {
-    max-height: 520px;
+    max-height: 708px;
     overflow-y: auto;
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
