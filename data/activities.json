@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-06-12T02:12:09.089Z",
-  "total_activities": 155,
+  "last_updated": "2026-06-12T08:14:26.795Z",
+  "total_activities": 158,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -2250,6 +2250,51 @@
       "start_date": "2026-06-11T21:53:11.662Z",
       "start_date_local": "2026-06-11T21:53:11.662Z",
       "first_seen": "2026-06-11T21:53:11.662Z"
+    },
+    {
+      "athlete_name": "Ana E",
+      "firstname": "Ana",
+      "lastname": "E.",
+      "name": "Morning Trail Run",
+      "type": "Run",
+      "distance": 0,
+      "moving_time": 0,
+      "elapsed_time": 8,
+      "total_elevation_gain": 0,
+      "start_date": "2026-06-12T08:14:26.794Z",
+      "start_date_local": "2026-06-12T08:14:26.794Z",
+      "workout_type": null,
+      "first_seen": "2026-06-12T08:14:26.794Z"
+    },
+    {
+      "athlete_name": "Cintia J",
+      "firstname": "Cintia",
+      "lastname": "J.",
+      "name": "Morning Run",
+      "type": "Run",
+      "distance": 4330.5,
+      "moving_time": 1695,
+      "elapsed_time": 1717,
+      "total_elevation_gain": 30,
+      "start_date": "2026-06-12T08:14:26.794Z",
+      "start_date_local": "2026-06-12T08:14:26.794Z",
+      "workout_type": null,
+      "first_seen": "2026-06-12T08:14:26.794Z"
+    },
+    {
+      "athlete_name": "Rebecca H",
+      "firstname": "Rebecca",
+      "lastname": "H.",
+      "name": "8km Long Run",
+      "type": "Run",
+      "distance": 8127.3,
+      "moving_time": 3253,
+      "elapsed_time": 3253,
+      "total_elevation_gain": 32.1,
+      "start_date": "2026-06-12T08:14:26.794Z",
+      "start_date_local": "2026-06-12T08:14:26.794Z",
+      "workout_type": 0,
+      "first_seen": "2026-06-12T08:14:26.794Z"
     }
   ]
 }
