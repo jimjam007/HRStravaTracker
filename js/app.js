@@ -299,14 +299,16 @@ function renderAwardGroup(id, awards, athletes) {
                 <div class="award-label">${aw.name}</div>
                 <div class="award-winner">${esc(r.winner)}</div>
                 <div class="award-value">${esc(r.value)}</div>
+                <div class="award-desc">${aw.desc}</div>
             </div>
         </div>`;
         return `<div class="award-card empty">
             <div class="award-icon ${iconStyle}">${aw.icon}</div>
             <div class="award-info">
                 <div class="award-label">${aw.name}</div>
-                <div class="award-winner">${aw.desc}</div>
+                <div class="award-winner">—</div>
                 <div class="award-value">Not enough data yet</div>
+                <div class="award-desc">${aw.desc}</div>
             </div>
         </div>`;
     }).join('');
