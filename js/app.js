@@ -61,16 +61,12 @@ const PERFORMANCE_AWARDS = [
         }
     },
     {
-        id: 'consistency', name: 'Consistency Champion', desc: 'Most active days logged',
-        icon: ICONS.calendar, style: '',
+        id: 'time_traveller', name: 'Time Traveller', desc: 'Highest total moving time',
+        icon: ICONS.clock, style: '',
         compute: (ath) => {
-            const dc = {};
-            for (const [n, acts] of Object.entries(ath)) {
-                const days = new Set(acts.map(a => (a.start_date || a.first_seen || '').slice(0, 10)).filter(Boolean));
-                dc[n] = days.size;
-            }
-            const w = topEntry(Object.entries(dc));
-            return w ? { winner: w[0], value: `${w[1]} active days` } : null;
+            const t = sumBy(ath, 'moving_time');
+            const w = topEntry(t);
+            return w ? { winner: w[0], value: dur(w[1]) + ' total' } : null;
         }
     },
     {
@@ -106,6 +102,19 @@ const PERFORMANCE_AWARDS = [
 ];
 
 const MOTIVATIONAL_AWARDS = [
+    {
+        id: 'consistency', name: 'Consistency Champion', desc: 'Most active days logged',
+        icon: ICONS.calendar, style: 'warm',
+        compute: (ath) => {
+            const dc = {};
+            for (const [n, acts] of Object.entries(ath)) {
+                const days = new Set(acts.map(a => (a.start_date_local || a.start_date || a.first_seen || '').slice(0, 10)).filter(Boolean));
+                dc[n] = days.size;
+            }
+            const w = topEntry(Object.entries(dc));
+            return w ? { winner: w[0], value: `${w[1]} active days` } : null;
+        }
+    },
     {
         id: 'improved', name: 'Most Improved', desc: 'Biggest % increase week-on-week',
         icon: ICONS.trending, style: 'warm',
