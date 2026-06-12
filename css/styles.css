@@ -695,7 +695,7 @@ h1, h2, h3 {
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 24px;
-    align-items: stretch;
+    align-items: start;
 }
 
 .panel-main {
@@ -705,6 +705,8 @@ h1, h2, h3 {
 .panel-sidebar {
     display: flex;
     flex-direction: column;
+    position: sticky;
+    top: 60px;
 }
 
 .sidebar-widget {
@@ -732,17 +734,8 @@ h1, h2, h3 {
     width: 100%;
 }
 
-.sidebar-widget-fill {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    min-height: 0;
-}
-
 .sidebar-widget-fill iframe {
-    flex: 1;
-    height: 0;
-    min-height: 300px;
+    height: 454px;
 }
 
 @media (max-width: 768px) {
