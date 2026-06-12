@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
   "last_updated": "2026-06-12T13:50:13.983Z",
-  "total_activities": 39,
+  "total_activities": 37,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -452,10 +452,10 @@
       "moving_time": 1695,
       "elapsed_time": 1717,
       "total_elevation_gain": 30,
-      "start_date": "2026-06-12T10:14:02.968Z",
-      "start_date_local": "2026-06-12T10:14:02.968Z",
+      "start_date": "2026-06-12T05:00:00Z",
+      "start_date_local": "2026-06-12T07:00:00",
       "workout_type": null,
-      "first_seen": "2026-06-12T10:14:02.968Z"
+      "first_seen": "2026-06-12T07:00:00Z"
     },
     {
       "athlete_name": "Rebecca H",
@@ -470,35 +470,6 @@
       "start_date": "2026-06-11T20:00:00Z",
       "start_date_local": "2026-06-11T21:00:00",
       "first_seen": "2026-06-11T21:00:00Z"
-    },
-    {
-      "athlete_name": "Rebecca H",
-      "firstname": "Rebecca",
-      "lastname": "H.",
-      "name": "Afternoon Walk",
-      "type": "Walk",
-      "distance": 1060.5,
-      "moving_time": 673,
-      "elapsed_time": 768,
-      "total_elevation_gain": 7.8,
-      "start_date": "2026-06-12T10:14:02.968Z",
-      "start_date_local": "2026-06-12T10:14:02.968Z",
-      "first_seen": "2026-06-12T10:14:02.968Z"
-    },
-    {
-      "athlete_name": "Rebecca H",
-      "firstname": "Rebecca",
-      "lastname": "H.",
-      "name": "5km Easy Run",
-      "type": "Run",
-      "distance": 5008.5,
-      "moving_time": 1897,
-      "elapsed_time": 1897,
-      "total_elevation_gain": 2.1,
-      "start_date": "2026-06-12T10:14:02.968Z",
-      "start_date_local": "2026-06-12T10:14:02.968Z",
-      "workout_type": null,
-      "first_seen": "2026-06-12T10:14:02.968Z"
     },
     {
       "athlete_name": "Will D",

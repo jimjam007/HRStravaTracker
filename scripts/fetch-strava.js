@@ -161,16 +161,38 @@ async function main() {
         // Start with ALL existing activities (these have curated/correct dates)
         const merged = [...existingActivities];
 
+        // Fuzzy match: check if an activity closely matches any existing one.
+        // This catches cases where Strava returns old activities with slightly
+        // different stats (especially common for athletes with repetitive routes
+        // like daily morning runs with near-identical distances).
+        function fuzzyMatchExists(a) {
+            return existingActivities.some(e =>
+                e.athlete_name === a.athlete_name &&
+                e.name === a.name &&
+                Math.abs(e.distance - a.distance) < Math.max(a.distance * 0.1, 200) &&
+                Math.abs(e.moving_time - a.moving_time) < 120
+            );
+        }
+
         // Only add activities we have NEVER seen before in any sync
         let newCount = 0;
+        let skippedFuzzy = 0;
         for (const a of newActivities) {
             const key = activityKey(a);
 
             // Remember this key for future syncs (even if we don't add the activity)
             knownSet.add(key);
 
-            // Skip if we've seen this activity before
-            if (knownKeys.includes(key) || existingActivities.some(e => activityKey(e) === key)) continue;
+            // Skip if we've seen this key before (exact match after rounding)
+            if (knownSet.has(key) && (knownKeys.includes(key) || existingActivities.some(e => activityKey(e) === key))) continue;
+
+            // Skip if it fuzzy-matches an existing activity (same person, same name,
+            // similar distance within 10% or 200m, and time within 2 minutes)
+            if (fuzzyMatchExists(a)) {
+                console.log(`  Skipped fuzzy duplicate: ${a.athlete_name} "${a.name}" ${Math.round(a.distance)}m`);
+                skippedFuzzy++;
+                continue;
+            }
 
             // This is a genuinely new activity - stamp it with current time
             a.first_seen = now;
@@ -181,7 +203,7 @@ async function main() {
             newCount++;
         }
 
-        console.log(`Found ${newCount} genuinely new activities.`);
+        console.log(`Found ${newCount} genuinely new activities (${skippedFuzzy} fuzzy duplicates skipped).`);
 
         const output = {
             club_id: CLUB_ID,
