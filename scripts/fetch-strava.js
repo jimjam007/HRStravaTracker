@@ -145,8 +145,10 @@ async function main() {
         const newActivities = await fetchRecentClubActivities(accessToken);
         console.log(`Fetched ${newActivities.length} activities from Strava.`);
 
+        // Round distance to nearest 100m to avoid duplicates from Strava API
+        // returning slightly different values for the same activity across calls
         const activityKey = (a) =>
-            `${a.athlete_name}|${a.name}|${Math.round(a.distance)}|${a.moving_time}`;
+            `${a.athlete_name}|${a.name}|${Math.round(a.distance / 100) * 100}|${a.moving_time}`;
 
         // Build set of ALL known keys (existing activities + previously seen API activities)
         const knownSet = new Set(knownKeys);
