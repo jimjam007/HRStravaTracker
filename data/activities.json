@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-06-13T08:01:27.012Z",
-  "total_activities": 38,
+  "last_updated": "2026-06-13T10:37:53.981Z",
+  "total_activities": 39,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -556,6 +556,21 @@
       "start_date_local": "2026-06-12T18:31:01.426Z",
       "workout_type": 0,
       "first_seen": "2026-06-12T18:31:01.426Z"
+    },
+    {
+      "athlete_name": "Rebecca H",
+      "firstname": "Rebecca",
+      "lastname": "H.",
+      "name": "Rolling 400s",
+      "type": "Run",
+      "distance": 6177.3,
+      "moving_time": 2540,
+      "elapsed_time": 2698,
+      "total_elevation_gain": 8.6,
+      "start_date": "2026-06-13T10:37:53.980Z",
+      "start_date_local": "2026-06-13T10:37:53.980Z",
+      "workout_type": null,
+      "first_seen": "2026-06-13T10:37:53.980Z"
     }
   ],
   "known_keys": [
@@ -712,6 +727,7 @@
     "Rebecca H|Hella Windy 200m Repeats|8000|3151",
     "James A|As Prescribed|25500|8188",
     "James A|Afternoon Run|11600|3668",
-    "James A|3k @ ~5:00pk, 6k @ 3:49pk, 5k @ ~4:50pk|14500|3844"
+    "James A|3k @ ~5:00pk, 6k @ 3:49pk, 5k @ ~4:50pk|14500|3844",
+    "Rebecca H|Rolling 400s|6200|2540"
   ]
 }
