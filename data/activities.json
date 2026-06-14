@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-06-14T08:49:33.459Z",
-  "total_activities": 39,
+  "last_updated": "2026-06-14T11:27:30.156Z",
+  "total_activities": 40,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -571,6 +571,21 @@
       "start_date_local": "2026-06-13T10:37:53.980Z",
       "workout_type": null,
       "first_seen": "2026-06-13T10:37:53.980Z"
+    },
+    {
+      "athlete_name": "James A",
+      "firstname": "James",
+      "lastname": "A.",
+      "name": "22k @ 5:15pk, 6k @ 3:52pk, 4k CD",
+      "type": "Run",
+      "distance": 32156,
+      "moving_time": 9686,
+      "elapsed_time": 10300,
+      "total_elevation_gain": 81,
+      "start_date": "2026-06-14T11:27:30.155Z",
+      "start_date_local": "2026-06-14T11:27:30.155Z",
+      "workout_type": 0,
+      "first_seen": "2026-06-14T11:27:30.155Z"
     }
   ],
   "known_keys": [
@@ -728,6 +743,7 @@
     "James A|As Prescribed|25500|8188",
     "James A|Afternoon Run|11600|3668",
     "James A|3k @ ~5:00pk, 6k @ 3:49pk, 5k @ ~4:50pk|14500|3844",
-    "Rebecca H|Rolling 400s|6200|2540"
+    "Rebecca H|Rolling 400s|6200|2540",
+    "James A|22k @ 5:15pk, 6k @ 3:52pk, 4k CD|32200|9686"
   ]
 }
