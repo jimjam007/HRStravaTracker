@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-06-15T03:42:40.632Z",
-  "total_activities": 42,
+  "last_updated": "2026-06-15T09:47:34.248Z",
+  "total_activities": 43,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -614,6 +614,21 @@
       "start_date": "2026-06-14T19:57:05.008Z",
       "start_date_local": "2026-06-14T19:57:05.008Z",
       "first_seen": "2026-06-14T19:57:05.008Z"
+    },
+    {
+      "athlete_name": "Cintia J",
+      "firstname": "Cintia",
+      "lastname": "J.",
+      "name": "Monday run✨",
+      "type": "Run",
+      "distance": 4342.8,
+      "moving_time": 1721,
+      "elapsed_time": 1798,
+      "total_elevation_gain": 29.8,
+      "start_date": "2026-06-15T09:47:34.247Z",
+      "start_date_local": "2026-06-15T09:47:34.247Z",
+      "workout_type": null,
+      "first_seen": "2026-06-15T09:47:34.247Z"
     }
   ],
   "known_keys": [
@@ -774,6 +789,7 @@
     "Rebecca H|Rolling 400s|6200|2540",
     "James A|22k @ 5:15pk, 6k @ 3:52pk, 4k CD|32200|9686",
     "Rebecca H|Night Walk|2000|1390",
-    "Rebecca H|Afternoon Walk|3100|2750"
+    "Rebecca H|Afternoon Walk|3100|2750",
+    "Cintia J|Monday run✨|4300|1721"
   ]
 }
