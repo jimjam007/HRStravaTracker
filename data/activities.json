@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-06-17T16:02:21.133Z",
-  "total_activities": 50,
+  "last_updated": "2026-06-17T18:33:12.427Z",
+  "total_activities": 52,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -730,6 +730,35 @@
       "start_date": "2026-06-17T16:02:21.133Z",
       "start_date_local": "2026-06-17T16:02:21.133Z",
       "first_seen": "2026-06-17T16:02:21.133Z"
+    },
+    {
+      "athlete_name": "James A",
+      "firstname": "James",
+      "lastname": "A.",
+      "name": "3k @ ~5:20, 6k @ ~3:49, 5k @ ~5:20",
+      "type": "Run",
+      "distance": 14008,
+      "moving_time": 3964,
+      "elapsed_time": 4163,
+      "total_elevation_gain": 35,
+      "start_date": "2026-06-17T18:33:12.426Z",
+      "start_date_local": "2026-06-17T18:33:12.426Z",
+      "workout_type": 0,
+      "first_seen": "2026-06-17T18:33:12.426Z"
+    },
+    {
+      "athlete_name": "Rebecca H",
+      "firstname": "Rebecca",
+      "lastname": "H.",
+      "name": "Afternoon Walk",
+      "type": "Walk",
+      "distance": 5377.3,
+      "moving_time": 4363,
+      "elapsed_time": 4884,
+      "total_elevation_gain": 13,
+      "start_date": "2026-06-17T18:33:12.426Z",
+      "start_date_local": "2026-06-17T18:33:12.426Z",
+      "first_seen": "2026-06-17T18:33:12.426Z"
     }
   ],
   "known_keys": [
@@ -898,6 +927,8 @@
     "Rebecca H|Lunch Walk|2800|2084",
     "James A|Easy 10k Flush|10700|3336",
     "Rebecca H|9km Progressive Long Run|9000|3368",
-    "Will D|Afternoon Walk|2500|1622"
+    "Will D|Afternoon Walk|2500|1622",
+    "James A|3k @ ~5:20, 6k @ ~3:49, 5k @ ~5:20|14000|3964",
+    "Rebecca H|Afternoon Walk|5400|4363"
   ]
 }
