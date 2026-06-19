@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-06-19T11:48:04.351Z",
-  "total_activities": 57,
+  "last_updated": "2026-06-19T14:54:58.164Z",
+  "total_activities": 59,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -830,6 +830,34 @@
       "start_date_local": "2026-06-19T07:26:25.730Z",
       "workout_type": null,
       "first_seen": "2026-06-19T07:26:25.730Z"
+    },
+    {
+      "athlete_name": "Will D",
+      "firstname": "Will",
+      "lastname": "D.",
+      "name": "Afternoon Walk",
+      "type": "Walk",
+      "distance": 2119.7,
+      "moving_time": 1762,
+      "elapsed_time": 1871,
+      "total_elevation_gain": 45.3,
+      "start_date": "2026-06-19T14:54:58.163Z",
+      "start_date_local": "2026-06-19T14:54:58.163Z",
+      "first_seen": "2026-06-19T14:54:58.163Z"
+    },
+    {
+      "athlete_name": "Ali K",
+      "firstname": "Ali",
+      "lastname": "K.",
+      "name": "Lunchtime Walk to Tuckton",
+      "type": "Walk",
+      "distance": 3597.2,
+      "moving_time": 2833,
+      "elapsed_time": 8009,
+      "total_elevation_gain": 11.9,
+      "start_date": "2026-06-19T14:54:58.163Z",
+      "start_date_local": "2026-06-19T14:54:58.163Z",
+      "first_seen": "2026-06-19T14:54:58.163Z"
     }
   ],
   "known_keys": [
@@ -1006,6 +1034,8 @@
     "Rebecca H|Lunch Walk|1200|1060",
     "Ali K|Lunchtime walk to M&S|2900|2338",
     "Rebecca H|Evening Walk|4000|3289",
-    "Cintia J|Friday☀️|4400|1761"
+    "Cintia J|Friday☀️|4400|1761",
+    "Will D|Afternoon Walk|2100|1762",
+    "Ali K|Lunchtime Walk to Tuckton|3600|2833"
   ]
 }
