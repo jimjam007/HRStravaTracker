@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-06-19T20:47:26.892Z",
-  "total_activities": 60,
+  "last_updated": "2026-06-19T22:01:13.525Z",
+  "total_activities": 62,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -872,6 +872,34 @@
       "start_date": "2026-06-19T19:13:32.524Z",
       "start_date_local": "2026-06-19T19:13:32.524Z",
       "first_seen": "2026-06-19T19:13:32.524Z"
+    },
+    {
+      "athlete_name": "Rebecca H",
+      "firstname": "Rebecca",
+      "lastname": "H.",
+      "name": "Evening Walk",
+      "type": "Walk",
+      "distance": 2642,
+      "moving_time": 2316,
+      "elapsed_time": 5971,
+      "total_elevation_gain": 5.6,
+      "start_date": "2026-06-19T22:01:13.524Z",
+      "start_date_local": "2026-06-19T22:01:13.524Z",
+      "first_seen": "2026-06-19T22:01:13.524Z"
+    },
+    {
+      "athlete_name": "Rebecca H",
+      "firstname": "Rebecca",
+      "lastname": "H.",
+      "name": "Afternoon Walk",
+      "type": "Walk",
+      "distance": 1753.8,
+      "moving_time": 1543,
+      "elapsed_time": 12487,
+      "total_elevation_gain": 5.2,
+      "start_date": "2026-06-19T22:01:13.524Z",
+      "start_date_local": "2026-06-19T22:01:13.524Z",
+      "first_seen": "2026-06-19T22:01:13.524Z"
     }
   ],
   "known_keys": [
@@ -1051,6 +1079,8 @@
     "Cintia J|Friday☀️|4400|1761",
     "Will D|Afternoon Walk|2100|1762",
     "Ali K|Lunchtime Walk to Tuckton|3600|2833",
-    "Ali K|Evening walk to the shop for beer|400|354"
+    "Ali K|Evening walk to the shop for beer|400|354",
+    "Rebecca H|Evening Walk|2600|2316",
+    "Rebecca H|Afternoon Walk|1800|1543"
   ]
 }
