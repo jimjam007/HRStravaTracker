@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-06-19T17:15:14.546Z",
-  "total_activities": 59,
+  "last_updated": "2026-06-19T19:13:32.525Z",
+  "total_activities": 60,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -858,6 +858,20 @@
       "start_date": "2026-06-19T14:54:58.163Z",
       "start_date_local": "2026-06-19T14:54:58.163Z",
       "first_seen": "2026-06-19T14:54:58.163Z"
+    },
+    {
+      "athlete_name": "Ali K",
+      "firstname": "Ali",
+      "lastname": "K.",
+      "name": "Evening walk to the shop for beer",
+      "type": "Walk",
+      "distance": 440.7,
+      "moving_time": 354,
+      "elapsed_time": 699,
+      "total_elevation_gain": 5.3,
+      "start_date": "2026-06-19T19:13:32.524Z",
+      "start_date_local": "2026-06-19T19:13:32.524Z",
+      "first_seen": "2026-06-19T19:13:32.524Z"
     }
   ],
   "known_keys": [
@@ -1036,6 +1050,7 @@
     "Rebecca H|Evening Walk|4000|3289",
     "Cintia J|Friday☀️|4400|1761",
     "Will D|Afternoon Walk|2100|1762",
-    "Ali K|Lunchtime Walk to Tuckton|3600|2833"
+    "Ali K|Lunchtime Walk to Tuckton|3600|2833",
+    "Ali K|Evening walk to the shop for beer|400|354"
   ]
 }
