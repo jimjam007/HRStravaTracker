@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-06-19T02:05:09.206Z",
-  "total_activities": 56,
+  "last_updated": "2026-06-19T07:26:25.731Z",
+  "total_activities": 57,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -815,6 +815,21 @@
       "start_date": "2026-06-18T21:13:29.976Z",
       "start_date_local": "2026-06-18T21:13:29.976Z",
       "first_seen": "2026-06-18T21:13:29.976Z"
+    },
+    {
+      "athlete_name": "Cintia J",
+      "firstname": "Cintia",
+      "lastname": "J.",
+      "name": "Friday☀️",
+      "type": "Run",
+      "distance": 4373.3,
+      "moving_time": 1761,
+      "elapsed_time": 1831,
+      "total_elevation_gain": 32.3,
+      "start_date": "2026-06-19T07:26:25.730Z",
+      "start_date_local": "2026-06-19T07:26:25.730Z",
+      "workout_type": null,
+      "first_seen": "2026-06-19T07:26:25.730Z"
     }
   ],
   "known_keys": [
@@ -990,6 +1005,7 @@
     "Will D|Afternoon Walk|3400|2116",
     "Rebecca H|Lunch Walk|1200|1060",
     "Ali K|Lunchtime walk to M&S|2900|2338",
-    "Rebecca H|Evening Walk|4000|3289"
+    "Rebecca H|Evening Walk|4000|3289",
+    "Cintia J|Friday☀️|4400|1761"
   ]
 }
