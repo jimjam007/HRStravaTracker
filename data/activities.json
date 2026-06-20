@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-06-20T13:12:02.000Z",
-  "total_activities": 64,
+  "last_updated": "2026-06-20T15:14:18.054Z",
+  "total_activities": 65,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -929,6 +929,20 @@
       "start_date": "2026-06-20T11:33:30.521Z",
       "start_date_local": "2026-06-20T11:33:30.521Z",
       "first_seen": "2026-06-20T11:33:30.521Z"
+    },
+    {
+      "athlete_name": "Rebecca H",
+      "firstname": "Rebecca",
+      "lastname": "H.",
+      "name": "Afternoon Walk",
+      "type": "Walk",
+      "distance": 1062.2,
+      "moving_time": 974,
+      "elapsed_time": 2743,
+      "total_elevation_gain": 9.8,
+      "start_date": "2026-06-20T15:14:18.054Z",
+      "start_date_local": "2026-06-20T15:14:18.054Z",
+      "first_seen": "2026-06-20T15:14:18.054Z"
     }
   ],
   "known_keys": [
@@ -1112,6 +1126,7 @@
     "Rebecca H|Evening Walk|2600|2316",
     "Rebecca H|Afternoon Walk|1800|1543",
     "Rebecca H|7.5km Easy Run|7500|3001",
-    "Rebecca H|Morning Walk|4800|4256"
+    "Rebecca H|Morning Walk|4800|4256",
+    "Rebecca H|Afternoon Walk|1100|974"
   ]
 }
