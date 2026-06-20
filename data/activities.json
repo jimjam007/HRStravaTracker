@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-06-20T15:14:18.054Z",
-  "total_activities": 65,
+  "last_updated": "2026-06-20T16:52:46.729Z",
+  "total_activities": 66,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -943,6 +943,21 @@
       "start_date": "2026-06-20T15:14:18.054Z",
       "start_date_local": "2026-06-20T15:14:18.054Z",
       "first_seen": "2026-06-20T15:14:18.054Z"
+    },
+    {
+      "athlete_name": "James A",
+      "firstname": "James",
+      "lastname": "A.",
+      "name": "Easy almost 10",
+      "type": "Run",
+      "distance": 9796.2,
+      "moving_time": 3193,
+      "elapsed_time": 3556,
+      "total_elevation_gain": 26,
+      "start_date": "2026-06-20T16:52:46.728Z",
+      "start_date_local": "2026-06-20T16:52:46.728Z",
+      "workout_type": 0,
+      "first_seen": "2026-06-20T16:52:46.728Z"
     }
   ],
   "known_keys": [
@@ -1127,6 +1142,7 @@
     "Rebecca H|Afternoon Walk|1800|1543",
     "Rebecca H|7.5km Easy Run|7500|3001",
     "Rebecca H|Morning Walk|4800|4256",
-    "Rebecca H|Afternoon Walk|1100|974"
+    "Rebecca H|Afternoon Walk|1100|974",
+    "James A|Easy almost 10|9800|3193"
   ]
 }
