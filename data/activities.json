@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-06-21T08:16:56.142Z",
-  "total_activities": 68,
+  "last_updated": "2026-06-21T11:28:44.699Z",
+  "total_activities": 69,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -987,6 +987,21 @@
       "start_date_local": "2026-06-21T08:16:56.142Z",
       "workout_type": null,
       "first_seen": "2026-06-21T08:16:56.142Z"
+    },
+    {
+      "athlete_name": "James A",
+      "firstname": "James",
+      "lastname": "A.",
+      "name": "Hot Diesel",
+      "type": "Run",
+      "distance": 30013.2,
+      "moving_time": 9736,
+      "elapsed_time": 10066,
+      "total_elevation_gain": 73,
+      "start_date": "2026-06-21T11:28:44.698Z",
+      "start_date_local": "2026-06-21T11:28:44.698Z",
+      "workout_type": 0,
+      "first_seen": "2026-06-21T11:28:44.698Z"
     }
   ],
   "known_keys": [
@@ -1174,6 +1189,7 @@
     "Rebecca H|Afternoon Walk|1100|974",
     "James A|Easy almost 10|9800|3193",
     "Rebecca H|Evening Walk|2400|2309",
-    "Rebecca H|Solent Airport 5k|5000|1773"
+    "Rebecca H|Solent Airport 5k|5000|1773",
+    "James A|Hot Diesel|30000|9736"
   ]
 }
