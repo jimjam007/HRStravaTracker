@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-07-01T05:03:53.830Z",
-  "total_activities": 84,
+  "last_updated": "2026-07-01T08:55:38.804Z",
+  "total_activities": 85,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -1219,6 +1219,21 @@
       "start_date_local": "2026-06-30T20:20:10.070Z",
       "workout_type": 0,
       "first_seen": "2026-06-30T20:20:10.070Z"
+    },
+    {
+      "athlete_name": "Cintia J",
+      "firstname": "Cintia",
+      "lastname": "J.",
+      "name": "After 42 degrees 🔥",
+      "type": "Run",
+      "distance": 4440.2,
+      "moving_time": 1693,
+      "elapsed_time": 1777,
+      "total_elevation_gain": 30.3,
+      "start_date": "2026-07-01T08:55:38.803Z",
+      "start_date_local": "2026-07-01T08:55:38.803Z",
+      "workout_type": null,
+      "first_seen": "2026-07-01T08:55:38.803Z"
     }
   ],
   "known_keys": [
@@ -1423,6 +1438,7 @@
     "James A|Mixing it up|11800|3017",
     "James A|Evening Run|9400|3038",
     "Rebecca H|Evening Walk|3400|3005",
-    "James A|Easy Flush|9400|3038"
+    "James A|Easy Flush|9400|3038",
+    "Cintia J|After 42 degrees 🔥|4400|1693"
   ]
 }
