@@ -174,6 +174,20 @@ async function main() {
             );
         }
 
+        // Rename match: catch activities that were renamed on Strava between syncs.
+        // Same athlete, distance within 1%, elevation within 1%, time within 10s —
+        // but the name has changed, so known_keys and fuzzy match both miss it.
+        function renameMatchExists(a) {
+            return existingActivities.some(e =>
+                e.athlete_name === a.athlete_name &&
+                e.name !== a.name &&
+                a.distance > 0 &&
+                Math.abs(e.distance - a.distance) / a.distance < 0.01 &&
+                Math.abs(e.total_elevation_gain - a.total_elevation_gain) / Math.max(a.total_elevation_gain, 1) < 0.01 &&
+                Math.abs(e.moving_time - a.moving_time) < 10
+            );
+        }
+
         // Cap: at most 5 new activities per sync. The club has ~7 members and
         // syncs every 15 mins, so more than 5 genuinely new activities in one
         // cycle is almost certainly old data resurfacing from the API.
@@ -195,6 +209,14 @@ async function main() {
             // similar distance within 10% or 200m, and time within 10 seconds)
             if (fuzzyMatchExists(a)) {
                 console.log(`  Skipped fuzzy duplicate: ${a.athlete_name} "${a.name}" ${Math.round(a.distance)}m`);
+                skippedFuzzy++;
+                continue;
+            }
+
+            // Skip if it matches an existing activity that was renamed on Strava
+            // (same athlete, distance/elevation within 1%, time within 10s, different name)
+            if (renameMatchExists(a)) {
+                console.log(`  Skipped renamed duplicate: ${a.athlete_name} "${a.name}" ${Math.round(a.distance)}m`);
                 skippedFuzzy++;
                 continue;
             }
