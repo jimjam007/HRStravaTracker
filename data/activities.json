@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-07-15T20:55:30.317Z",
-  "total_activities": 106,
+  "last_updated": "2026-07-15T21:55:47.210Z",
+  "total_activities": 107,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -1534,6 +1534,20 @@
       "start_date": "2026-07-15T12:41:32.804Z",
       "start_date_local": "2026-07-15T12:41:32.804Z",
       "first_seen": "2026-07-15T12:41:32.804Z"
+    },
+    {
+      "athlete_name": "Rebecca H",
+      "firstname": "Rebecca",
+      "lastname": "H.",
+      "name": "Evening Walk",
+      "type": "Walk",
+      "distance": 2664.8,
+      "moving_time": 1935,
+      "elapsed_time": 11152,
+      "total_elevation_gain": 13,
+      "start_date": "2026-07-15T21:55:47.208Z",
+      "start_date_local": "2026-07-15T21:55:47.208Z",
+      "first_seen": "2026-07-15T21:55:47.208Z"
     }
   ],
   "known_keys": [
@@ -1769,6 +1783,7 @@
     "James A|Nice n Easy|10600|3486",
     "Rebecca H|Night Walk|1200|1045",
     "Cintia J|Morning Run|4300|1751",
-    "Will D|Afternoon Walk|2300|1558"
+    "Will D|Afternoon Walk|2300|1558",
+    "Rebecca H|Evening Walk|2700|1935"
   ]
 }
