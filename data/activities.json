@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-07-17T06:26:45.007Z",
-  "total_activities": 110,
+  "last_updated": "2026-07-17T08:34:15.058Z",
+  "total_activities": 111,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -1591,6 +1591,21 @@
       "start_date_local": "2026-07-16T21:15:18.632Z",
       "workout_type": 0,
       "first_seen": "2026-07-16T21:15:18.632Z"
+    },
+    {
+      "athlete_name": "Rebecca H",
+      "firstname": "Rebecca",
+      "lastname": "H.",
+      "name": "Easy Morning Run",
+      "type": "Run",
+      "distance": 8054.1,
+      "moving_time": 3212,
+      "elapsed_time": 3222,
+      "total_elevation_gain": 28,
+      "start_date": "2026-07-17T08:34:15.056Z",
+      "start_date_local": "2026-07-17T08:34:15.056Z",
+      "workout_type": null,
+      "first_seen": "2026-07-17T08:34:15.056Z"
     }
   ],
   "known_keys": [
@@ -1830,6 +1845,8 @@
     "Rebecca H|Evening Walk|2700|1935",
     "Rebecca H|Morning Walk|1500|1023",
     "Rebecca H|Evening Walk|2700|2574",
-    "James A|3k Easy, 7k @3:51, ~5k Easy|14300|3862"
+    "James A|3k Easy, 7k @3:51, ~5k Easy|14300|3862",
+    "Cintia J|Morning Run|4300|1664",
+    "Rebecca H|Easy Morning Run|8100|3212"
   ]
 }
