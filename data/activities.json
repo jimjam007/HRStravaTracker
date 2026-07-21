@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-07-21T16:53:08.240Z",
-  "total_activities": 122,
+  "last_updated": "2026-07-21T18:13:36.877Z",
+  "total_activities": 123,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -1764,6 +1764,21 @@
       "start_date": "2026-07-20T21:40:16.568Z",
       "start_date_local": "2026-07-20T21:40:16.568Z",
       "first_seen": "2026-07-20T21:40:16.568Z"
+    },
+    {
+      "athlete_name": "James A",
+      "firstname": "James",
+      "lastname": "A.",
+      "name": "Relaxin’ Maxin’",
+      "type": "Run",
+      "distance": 8198.9,
+      "moving_time": 2630,
+      "elapsed_time": 2661,
+      "total_elevation_gain": 26,
+      "start_date": "2026-07-21T18:13:36.876Z",
+      "start_date_local": "2026-07-21T18:13:36.876Z",
+      "workout_type": null,
+      "first_seen": "2026-07-21T18:13:36.876Z"
     }
   ],
   "known_keys": [
@@ -2016,6 +2031,7 @@
     "Will D|Afternoon Walk|2800|2172",
     "Rebecca H|Evening Run|5000|1736",
     "James A|Afternoon Run|11800|3618",
-    "Rebecca H|Evening Walk|2300|1624"
+    "Rebecca H|Evening Walk|2300|1624",
+    "James A|Relaxin’ Maxin’|8200|2630"
   ]
 }
