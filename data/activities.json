@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-07-24T12:44:52.762Z",
-  "total_activities": 128,
+  "last_updated": "2026-07-24T14:26:44.840Z",
+  "total_activities": 129,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -1851,6 +1851,20 @@
       "start_date_local": "2026-07-24T09:09:18.294Z",
       "workout_type": null,
       "first_seen": "2026-07-24T09:09:18.294Z"
+    },
+    {
+      "athlete_name": "Ali K",
+      "firstname": "Ali",
+      "lastname": "K.",
+      "name": "Lunchtime walk and cycle",
+      "type": "Walk",
+      "distance": 5775.1,
+      "moving_time": 3601,
+      "elapsed_time": 5467,
+      "total_elevation_gain": 12.9,
+      "start_date": "2026-07-24T14:26:44.839Z",
+      "start_date_local": "2026-07-24T14:26:44.839Z",
+      "first_seen": "2026-07-24T14:26:44.839Z"
     }
   ],
   "known_keys": [
@@ -2110,6 +2124,7 @@
     "Cintia J|Morning Run|4300|1750",
     "Rebecca H|Morning Walk|2900|2440",
     "Rebecca H|Morning Run|2200|767",
-    "Rebecca H|Morning Run|2700|1169"
+    "Rebecca H|Morning Run|2700|1169",
+    "Ali K|Lunchtime walk and cycle|5800|3601"
   ]
 }
