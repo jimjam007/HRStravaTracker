@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-07-26T12:15:52.899Z",
-  "total_activities": 130,
+  "last_updated": "2026-07-26T14:07:00.560Z",
+  "total_activities": 131,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -1880,6 +1880,21 @@
       "start_date_local": "2026-07-25T11:41:46.030Z",
       "workout_type": null,
       "first_seen": "2026-07-25T11:41:46.030Z"
+    },
+    {
+      "athlete_name": "Cintia J",
+      "firstname": "Cintia",
+      "lastname": "J.",
+      "name": "Afternoon Run",
+      "type": "Run",
+      "distance": 4238.1,
+      "moving_time": 1652,
+      "elapsed_time": 1665,
+      "total_elevation_gain": 29.6,
+      "start_date": "2026-07-26T14:07:00.559Z",
+      "start_date_local": "2026-07-26T14:07:00.559Z",
+      "workout_type": null,
+      "first_seen": "2026-07-26T14:07:00.559Z"
     }
   ],
   "known_keys": [
@@ -2141,6 +2156,7 @@
     "Rebecca H|Morning Run|2200|767",
     "Rebecca H|Morning Run|2700|1169",
     "Ali K|Lunchtime walk and cycle|5800|3601",
-    "Rebecca H|Morning Run|13000|5574"
+    "Rebecca H|Morning Run|13000|5574",
+    "Cintia J|Afternoon Run|4200|1652"
   ]
 }
