@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-08-04T20:21:00.248Z",
-  "total_activities": 150,
+  "last_updated": "2026-08-04T21:47:11.716Z",
+  "total_activities": 151,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -2168,6 +2168,20 @@
       "start_date": "2026-08-04T20:21:00.247Z",
       "start_date_local": "2026-08-04T20:21:00.247Z",
       "first_seen": "2026-08-04T20:21:00.247Z"
+    },
+    {
+      "athlete_name": "Will D",
+      "firstname": "Will",
+      "lastname": "D.",
+      "name": "Night Walk",
+      "type": "Walk",
+      "distance": 1728.2,
+      "moving_time": 1261,
+      "elapsed_time": 1287,
+      "total_elevation_gain": 32.7,
+      "start_date": "2026-08-04T21:47:11.716Z",
+      "start_date_local": "2026-08-04T21:47:11.716Z",
+      "first_seen": "2026-08-04T21:47:11.716Z"
     }
   ],
   "known_keys": [
@@ -2451,6 +2465,7 @@
     "Rebecca H|Evening Run|5000|2013",
     "Will D|Night Walk|2000|1395",
     "Rebecca H|Evening Walk|2400|2027",
-    "Rebecca H|Evening Walk|3100|3004"
+    "Rebecca H|Evening Walk|3100|3004",
+    "Will D|Night Walk|1700|1261"
   ]
 }
