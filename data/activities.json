@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-08-07T07:50:38.748Z",
-  "total_activities": 156,
+  "last_updated": "2026-08-07T08:52:38.113Z",
+  "total_activities": 157,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -2255,6 +2255,21 @@
       "start_date_local": "2026-08-06T10:06:46.022Z",
       "workout_type": null,
       "first_seen": "2026-08-06T10:06:46.022Z"
+    },
+    {
+      "athlete_name": "Cintia J",
+      "firstname": "Cintia",
+      "lastname": "J.",
+      "name": "Bala morning run🌊",
+      "type": "Run",
+      "distance": 5266.6,
+      "moving_time": 2107,
+      "elapsed_time": 2166,
+      "total_elevation_gain": 0,
+      "start_date": "2026-08-07T08:52:38.112Z",
+      "start_date_local": "2026-08-07T08:52:38.112Z",
+      "workout_type": null,
+      "first_seen": "2026-08-07T08:52:38.112Z"
     }
   ],
   "known_keys": [
@@ -2544,6 +2559,7 @@
     "Rebecca H|Lunch Walk|700|929",
     "Rebecca H|Afternoon Walk|900|958",
     "Cintia J|🔥☀️|4300|1769",
-    "Rebecca H|Morning Run|5100|1976"
+    "Rebecca H|Morning Run|5100|1976",
+    "Cintia J|Bala morning run🌊|5300|2107"
   ]
 }
