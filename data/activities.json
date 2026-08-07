@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-08-07T18:31:16.787Z",
-  "total_activities": 159,
+  "last_updated": "2026-08-07T19:37:43.542Z",
+  "total_activities": 160,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -2298,6 +2298,21 @@
       "start_date": "2026-08-07T16:48:29.553Z",
       "start_date_local": "2026-08-07T16:48:29.553Z",
       "first_seen": "2026-08-07T16:48:29.553Z"
+    },
+    {
+      "athlete_name": "James A",
+      "firstname": "James",
+      "lastname": "A.",
+      "name": "Evening Run",
+      "type": "Run",
+      "distance": 10540.5,
+      "moving_time": 3044,
+      "elapsed_time": 3181,
+      "total_elevation_gain": 28,
+      "start_date": "2026-08-07T19:37:43.542Z",
+      "start_date_local": "2026-08-07T19:37:43.542Z",
+      "workout_type": null,
+      "first_seen": "2026-08-07T19:37:43.542Z"
     }
   ],
   "known_keys": [
@@ -2590,6 +2605,7 @@
     "Rebecca H|Morning Run|5100|1976",
     "Cintia J|Bala morning run🌊|5300|2107",
     "Will D|Afternoon Walk|2000|1590",
-    "Rebecca H|Afternoon Walk|3100|1879"
+    "Rebecca H|Afternoon Walk|3100|1879",
+    "James A|Evening Run|10500|3044"
   ]
 }
