@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-08-12T19:35:53.586Z",
-  "total_activities": 170,
+  "last_updated": "2026-08-12T20:21:41.985Z",
+  "total_activities": 171,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -2459,6 +2459,21 @@
       "start_date": "2026-08-12T14:20:09.736Z",
       "start_date_local": "2026-08-12T14:20:09.736Z",
       "first_seen": "2026-08-12T14:20:09.736Z"
+    },
+    {
+      "athlete_name": "James A",
+      "firstname": "James",
+      "lastname": "A.",
+      "name": "3k easy, 6k@3:50, 4k CD",
+      "type": "Run",
+      "distance": 14373.9,
+      "moving_time": 4021,
+      "elapsed_time": 4275,
+      "total_elevation_gain": 33,
+      "start_date": "2026-08-12T20:21:41.983Z",
+      "start_date_local": "2026-08-12T20:21:41.983Z",
+      "workout_type": 0,
+      "first_seen": "2026-08-12T20:21:41.983Z"
     }
   ],
   "known_keys": [
@@ -2762,6 +2777,7 @@
     "Cintia J|Lunch break🪭|4200|1687",
     "Rebecca H|Evening Walk|3000|2702",
     "James A|Shake it off|9900|3233",
-    "Will D|Afternoon Walk|2100|1509"
+    "Will D|Afternoon Walk|2100|1509",
+    "James A|3k easy, 6k@3:50, 4k CD|14400|4021"
   ]
 }
