@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-08-14T17:36:50.663Z",
-  "total_activities": 172,
+  "last_updated": "2026-08-14T18:31:54.210Z",
+  "total_activities": 173,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -2489,6 +2489,21 @@
       "start_date_local": "2026-08-13T17:10:28.230Z",
       "workout_type": null,
       "first_seen": "2026-08-13T17:10:28.230Z"
+    },
+    {
+      "athlete_name": "James A",
+      "firstname": "James",
+      "lastname": "A.",
+      "name": "Evening Run",
+      "type": "Run",
+      "distance": 6718,
+      "moving_time": 2234,
+      "elapsed_time": 2281,
+      "total_elevation_gain": 19,
+      "start_date": "2026-08-14T18:31:54.209Z",
+      "start_date_local": "2026-08-14T18:31:54.209Z",
+      "workout_type": null,
+      "first_seen": "2026-08-14T18:31:54.209Z"
     }
   ],
   "known_keys": [
@@ -2794,6 +2809,7 @@
     "James A|Shake it off|9900|3233",
     "Will D|Afternoon Walk|2100|1509",
     "James A|3k easy, 6k@3:50, 4k CD|14400|4021",
-    "Cintia J|Evening run before a 12+ hour flight🔥|4300|1821"
+    "Cintia J|Evening run before a 12+ hour flight🔥|4300|1821",
+    "James A|Evening Run|6700|2234"
   ]
 }
