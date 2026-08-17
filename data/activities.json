@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-08-17T12:33:23.830Z",
-  "total_activities": 178,
+  "last_updated": "2026-08-17T13:25:22.577Z",
+  "total_activities": 179,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -2576,6 +2576,20 @@
       "start_date_local": "2026-08-17T01:10:17.478Z",
       "workout_type": null,
       "first_seen": "2026-08-17T01:10:17.478Z"
+    },
+    {
+      "athlete_name": "Will D",
+      "firstname": "Will",
+      "lastname": "D.",
+      "name": "Afternoon Walk",
+      "type": "Walk",
+      "distance": 2595.1,
+      "moving_time": 1716,
+      "elapsed_time": 1906,
+      "total_elevation_gain": 54,
+      "start_date": "2026-08-17T13:25:22.576Z",
+      "start_date_local": "2026-08-17T13:25:22.576Z",
+      "first_seen": "2026-08-17T13:25:22.576Z"
     }
   ],
   "known_keys": [
@@ -2887,6 +2901,7 @@
     "Rebecca H|Night Walk|800|683",
     "James A|Morning Run|23900|6798",
     "Rebecca H|Afternoon Walk|3000|2605",
-    "Cintia J|Morning run in Vietnam🇻🇳|4900|1776"
+    "Cintia J|Morning run in Vietnam🇻🇳|4900|1776",
+    "Will D|Afternoon Walk|2600|1716"
   ]
 }
