@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-08-19T20:31:00.364Z",
-  "total_activities": 183,
+  "last_updated": "2026-08-19T21:01:02.890Z",
+  "total_activities": 184,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -2649,6 +2649,20 @@
       "start_date_local": "2026-08-19T19:58:11.608Z",
       "workout_type": null,
       "first_seen": "2026-08-19T19:58:11.608Z"
+    },
+    {
+      "athlete_name": "Rebecca H",
+      "firstname": "Rebecca",
+      "lastname": "H.",
+      "name": "Night Walk",
+      "type": "Walk",
+      "distance": 1484.9,
+      "moving_time": 1455,
+      "elapsed_time": 2000,
+      "total_elevation_gain": 3,
+      "start_date": "2026-08-19T21:01:02.889Z",
+      "start_date_local": "2026-08-19T21:01:02.889Z",
+      "first_seen": "2026-08-19T21:01:02.889Z"
     }
   ],
   "known_keys": [
@@ -2967,6 +2981,7 @@
     "Rebecca H|Evening Walk|1500|1274",
     "Cintia J|Morning run 🇻🇳|4000|1445",
     "Will D|Afternoon Walk|2400|1559",
-    "Rebecca H|Hill “Sprints” 🤪|7100|3497"
+    "Rebecca H|Hill “Sprints” 🤪|7100|3497",
+    "Rebecca H|Night Walk|1500|1455"
   ]
 }
