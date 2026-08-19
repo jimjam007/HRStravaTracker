@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-08-19T19:37:00.581Z",
-  "total_activities": 182,
+  "last_updated": "2026-08-19T19:58:11.609Z",
+  "total_activities": 183,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -2634,6 +2634,21 @@
       "start_date_local": "2026-08-18T02:13:37.615Z",
       "workout_type": null,
       "first_seen": "2026-08-18T02:13:37.615Z"
+    },
+    {
+      "athlete_name": "Rebecca H",
+      "firstname": "Rebecca",
+      "lastname": "H.",
+      "name": "Hill “Sprints” 🤪",
+      "type": "Run",
+      "distance": 7088.3,
+      "moving_time": 3497,
+      "elapsed_time": 4075,
+      "total_elevation_gain": 117,
+      "start_date": "2026-08-19T19:58:11.608Z",
+      "start_date_local": "2026-08-19T19:58:11.608Z",
+      "workout_type": null,
+      "first_seen": "2026-08-19T19:58:11.608Z"
     }
   ],
   "known_keys": [
@@ -2951,6 +2966,7 @@
     "Rebecca H|Evening Run|5000|1850",
     "Rebecca H|Evening Walk|1500|1274",
     "Cintia J|Morning run 🇻🇳|4000|1445",
-    "Will D|Afternoon Walk|2400|1559"
+    "Will D|Afternoon Walk|2400|1559",
+    "Rebecca H|Hill “Sprints” 🤪|7100|3497"
   ]
 }
