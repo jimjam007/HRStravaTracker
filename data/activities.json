@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-08-21T20:19:35.292Z",
-  "total_activities": 188,
+  "last_updated": "2026-08-21T20:48:02.258Z",
+  "total_activities": 189,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -2721,6 +2721,20 @@
       "start_date": "2026-08-21T14:17:42.111Z",
       "start_date_local": "2026-08-21T14:17:42.111Z",
       "first_seen": "2026-08-21T14:17:42.111Z"
+    },
+    {
+      "athlete_name": "Rebecca H",
+      "firstname": "Rebecca",
+      "lastname": "H.",
+      "name": "Evening Walk",
+      "type": "Walk",
+      "distance": 3229,
+      "moving_time": 2608,
+      "elapsed_time": 11462,
+      "total_elevation_gain": 8,
+      "start_date": "2026-08-21T20:48:02.257Z",
+      "start_date_local": "2026-08-21T20:48:02.257Z",
+      "first_seen": "2026-08-21T20:48:02.257Z"
     }
   ],
   "known_keys": [
@@ -3045,6 +3059,7 @@
     "Cintia J|Hong Kong morning run|5400|2000",
     "Rebecca H|Morning Run|7500|2782",
     "James A|Morning Hike|3300|2931",
-    "James A|Afternoon Hike|2800|2667"
+    "James A|Afternoon Hike|2800|2667",
+    "Rebecca H|Evening Walk|3200|2608"
   ]
 }
