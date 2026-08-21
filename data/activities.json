@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-08-20T23:58:28.607Z",
-  "total_activities": 184,
+  "last_updated": "2026-08-21T01:35:14.764Z",
+  "total_activities": 185,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -2663,6 +2663,21 @@
       "start_date": "2026-08-19T21:01:02.889Z",
       "start_date_local": "2026-08-19T21:01:02.889Z",
       "first_seen": "2026-08-19T21:01:02.889Z"
+    },
+    {
+      "athlete_name": "Cintia J",
+      "firstname": "Cintia",
+      "lastname": "J.",
+      "name": "Hong Kong morning run",
+      "type": "Run",
+      "distance": 5436.3,
+      "moving_time": 2000,
+      "elapsed_time": 2343,
+      "total_elevation_gain": 131.2,
+      "start_date": "2026-08-21T01:35:14.763Z",
+      "start_date_local": "2026-08-21T01:35:14.763Z",
+      "workout_type": null,
+      "first_seen": "2026-08-21T01:35:14.763Z"
     }
   ],
   "known_keys": [
@@ -2983,6 +2998,7 @@
     "Will D|Afternoon Walk|2400|1559",
     "Rebecca H|Hill “Sprints” 🤪|7100|3497",
     "Rebecca H|Night Walk|1500|1455",
-    "Rebecca H|Hill “Sprints” 🤣|7100|3497"
+    "Rebecca H|Hill “Sprints” 🤣|7100|3497",
+    "Cintia J|Hong Kong morning run|5400|2000"
   ]
 }
