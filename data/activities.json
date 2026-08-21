@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-08-21T10:05:32.472Z",
-  "total_activities": 186,
+  "last_updated": "2026-08-21T10:45:55.841Z",
+  "total_activities": 187,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -2693,6 +2693,20 @@
       "start_date_local": "2026-08-21T07:30:00.594Z",
       "workout_type": null,
       "first_seen": "2026-08-21T07:30:00.594Z"
+    },
+    {
+      "athlete_name": "James A",
+      "firstname": "James",
+      "lastname": "A.",
+      "name": "Morning Hike",
+      "type": "Hike",
+      "distance": 3259.9,
+      "moving_time": 2931,
+      "elapsed_time": 6039,
+      "total_elevation_gain": 95,
+      "start_date": "2026-08-21T10:45:55.840Z",
+      "start_date_local": "2026-08-21T10:45:55.840Z",
+      "first_seen": "2026-08-21T10:45:55.840Z"
     }
   ],
   "known_keys": [
@@ -3015,6 +3029,7 @@
     "Rebecca H|Night Walk|1500|1455",
     "Rebecca H|Hill “Sprints” 🤣|7100|3497",
     "Cintia J|Hong Kong morning run|5400|2000",
-    "Rebecca H|Morning Run|7500|2782"
+    "Rebecca H|Morning Run|7500|2782",
+    "James A|Morning Hike|3300|2931"
   ]
 }
