@@ -1,7 +1,7 @@
 {
   "club_id": "2172779",
-  "last_updated": "2026-08-24T16:30:37.236Z",
-  "total_activities": 194,
+  "last_updated": "2026-08-24T17:14:31.287Z",
+  "total_activities": 195,
   "activities": [
     {
       "athlete_name": "Rebecca H",
@@ -2807,6 +2807,20 @@
       "start_date": "2026-08-24T15:08:54.341Z",
       "start_date_local": "2026-08-24T15:08:54.341Z",
       "first_seen": "2026-08-24T15:08:54.341Z"
+    },
+    {
+      "athlete_name": "Rebecca H",
+      "firstname": "Rebecca",
+      "lastname": "H.",
+      "name": "Afternoon Walk",
+      "type": "Walk",
+      "distance": 1644.1,
+      "moving_time": 1476,
+      "elapsed_time": 1620,
+      "total_elevation_gain": 12,
+      "start_date": "2026-08-24T17:14:31.286Z",
+      "start_date_local": "2026-08-24T17:14:31.286Z",
+      "first_seen": "2026-08-24T17:14:31.286Z"
     }
   ],
   "known_keys": [
@@ -3139,6 +3153,7 @@
     "James A|Morning Run|19400|5955",
     "James A|SLR|19400|5955",
     "Rebecca H|Afternoon Walk|2700|2262",
-    "James A|Lunch Hike|9000|8620"
+    "James A|Lunch Hike|9000|8620",
+    "Rebecca H|Afternoon Walk|1600|1476"
   ]
 }
